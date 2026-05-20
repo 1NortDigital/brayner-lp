@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Energia Solar em {{CLIENT_CITY}} e Região | {{CLIENT_NAME}}</title>
+<meta name="description" content="Instale energia solar na sua casa, empresa ou fazenda e reduza até 95% da conta de luz. {{CLIENT_NAME}} atende {{CLIENT_CITY}} e cidades de {{CLIENT_REGION}}. Orçamento grátis.">
+<meta name="keywords" content="energia solar {{CLIENT_CITY}}, painel solar residencial, energia solar {{CLIENT_REGION}}, {{CLIENT_NAME}}, instalação solar {{CLIENT_STATE}}, energia solar fazenda">
+<link rel="canonical" href="https://{{CLIENT_DOMAIN}}/">
+<meta name="geo.region" content="{{CLIENT_GEO_REGION}}">
+<meta name="geo.placename" content="{{CLIENT_CITY}}, {{CLIENT_STATE_FULL}}, Brasil">
+<meta name="geo.position" content="{{CLIENT_LAT}};{{CLIENT_LON}}">
+<meta name="ICBM" content="{{CLIENT_LAT}}, {{CLIENT_LON}}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://{{CLIENT_DOMAIN}}/">
+<meta property="og:title" content="Energia Solar — {{CLIENT_NAME}}">
+<meta property="og:description" content="Reduza até 95% da conta de luz com energia solar. Projeto personalizado e instalação em {{CLIENT_REGION}}.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="{{CLIENT_NAME}}">
+<meta property="og:image" content="assets/logo-{{CLIENT_SLUG}}.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+
+<!-- TODO: substituir GTM-XXXXXXXX pelo ID real do cliente e descomentar -->
+<!-- Google Tag Manager -->
+<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXXX');</script> -->
+<!-- End Google Tag Manager -->
+
+<!-- SCHEMA.ORG -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://{{CLIENT_DOMAIN}}/#business","name":"{{CLIENT_NAME}}","description":"Empresa especializada em projetos de energia solar fotovoltaica residencial, comercial e rural em {{CLIENT_REGION}}.","url":"https://{{CLIENT_DOMAIN}}","telephone":"+{{WHATSAPP_FULL}}","address":{"@type":"PostalAddress","addressLocality":"{{CLIENT_CITY}}","addressRegion":"{{CLIENT_STATE}}","addressCountry":"BR"},"geo":{"@type":"GeoCoordinates","latitude":{{CLIENT_LAT}},"longitude":{{CLIENT_LON}}},"sameAs":["{{INSTAGRAM_URL}}","{{FACEBOOK_URL}}","{{LINKEDIN_URL}}"],"areaServed":[{"@type":"City","name":"{{CLIENT_CITY}}"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"100","bestRating":"5"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Soluções em Energia Solar","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Energia Solar Residencial"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Energia Solar Empresarial"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Energia Solar para Fazendas"}}]}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quanto custa instalar energia solar em {{CLIENT_CITY}}?","acceptedAnswer":{"@type":"Answer","text":"O investimento residencial fica em média entre R$ 8.000 e R$ 15.000, com payback de até 5 anos. Painéis com garantia de 20 anos e mais de 25 anos de eficiência. Solicite orçamento gratuito."}},{"@type":"Question","name":"Em quanto tempo a energia solar se paga?","acceptedAnswer":{"@type":"Answer","text":"De 2 a 5 anos. Após o payback, você gera energia praticamente de graça por mais 20 a 25 anos. Melhor que poupança e CDI."}},{"@type":"Question","name":"A energia solar funciona em dias nublados?","acceptedAnswer":{"@type":"Answer","text":"Sim. Os painéis funcionam com luz difusa. {{CLIENT_REGION}} tem ótima irradiação solar."}},{"@type":"Question","name":"Por que escolher a {{CLIENT_SHORT_NAME}}?","acceptedAnswer":{"@type":"Answer","text":"Atendimento de ponta a ponta, painéis com garantia de 20 anos e mais de 25 anos de eficiência."}}]},{"@type":"WebPage","@id":"https://{{CLIENT_DOMAIN}}/","url":"https://{{CLIENT_DOMAIN}}/","name":"Energia Solar | {{CLIENT_NAME}}","inLanguage":"pt-BR"}]}
+</script>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+.material-icons{font-size:1em;vertical-align:-0.125em;line-height:1;display:inline-block}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+  /* === Sistema de cores — paleta do cliente ===
+     Substitua HEX e RGB. Mantenha HEX e RGB do mesmo valor sincronizados.
+     Ex: #0825c7 -> rgb(8,37,199) -> {{PRIMARY_RGB}}=8,37,199
+     === */
+  --navy:{{PRIMARY_COLOR}};        /* primária — azul vibrante */
+  --navy-dark:{{PRIMARY_DARK}};    /* variação escura — hover */
+  --navy-deep:{{PRIMARY_DEEP}};    /* hero deep — fundos escuros */
+  --navy-card:{{PRIMARY_CARD}};    /* cards / destaques claros */
+  --gold:{{ACCENT_COLOR}};         /* acento solar — CTAs */
+  --gold-dark:{{ACCENT_DARK}};
+  --gold-light:{{ACCENT_LIGHT}};
+  --gold-glow:rgba({{ACCENT_RGB}},.35);
+  --navy-glow:rgba({{PRIMARY_RGB}},.25);
+  --white:#fdfffc;
+  --gray-50:#F7F7F7;
+  --gray-100:#F2F4F7;
+  --gray-200:#EAECF0;
+  --gray-400:#98A2B3;
+  --gray-600:#475467;
+  --gray-800:#1C2940;
+  --section-light:#EBF1FF;
+  --text:{{PRIMARY_DEEP}};
+  --sh-sm:0 1px 4px rgba(0,0,0,.08);
+  --sh-md:0 4px 24px rgba({{PRIMARY_RGB}},.13);
+  --sh-lg:0 12px 48px rgba({{PRIMARY_RGB}},.20);
+  --sh-navy:0 4px 20px rgba({{PRIMARY_RGB}},.45);
+  --sh-gold:0 4px 20px rgba({{ACCENT_RGB}},.45);
+  --r:10px;--r-lg:18px;--r-pill:30px;--t:.28s ease;
+}
+body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--text);line-height:1.7;font-size:16px;overflow-x:hidden;font-weight:500}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;line-height:1.15;font-weight:800;letter-spacing:-.5px}
+.sec-label{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:10px}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* BUTTONS — border-radius pílula 30px */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;letter-spacing:.4px;padding:15px 32px;border-radius:var(--r-pill);text-decoration:none;cursor:pointer;border:none;transition:all var(--t);white-space:nowrap}
+.btn-gold{background:var(--gold);color:var(--navy);box-shadow:var(--sh-gold)}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 28px rgba(233,206,16,.6)}
+.btn-navy{background:var(--navy);color:var(--white);box-shadow:var(--sh-navy)}
+.btn-navy:hover{background:var(--navy-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(7,43,105,.6)}
+.btn-outline-white{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.6)}
+.btn-outline-white:hover{border-color:var(--white);background:rgba(255,255,255,.1)}
+.btn-white{background:var(--white);color:var(--navy);box-shadow:0 4px 18px rgba(0,0,0,.25)}
+.btn-white:hover{background:var(--gold-light);color:var(--navy);transform:translateY(-2px);box-shadow:0 8px 26px rgba(255,231,74,.45)}
+
+/* TOPBAR */
+.topbar{background:var(--navy-deep);padding:9px 0;font-size:13px}
+.topbar .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.topbar a{color:rgba(255,255,255,.75);text-decoration:none}.topbar a:hover{color:var(--gold)}
+.tb-side{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.tb-item{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.7)}
+
+/* HEADER */
+.header{background:var(--white);border-bottom:1px solid var(--gray-100);position:sticky;top:0;z-index:200;box-shadow:var(--sh-sm);transition:box-shadow var(--t)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px}
+.logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-wrap img{height:54px;width:auto;display:block}
+.header-nav{display:flex;align-items:center;gap:4px}
+.header-nav a{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:600;color:var(--gray-600);text-decoration:none;padding:7px 12px;border-radius:6px;transition:color var(--t)}
+.header-nav a:hover{color:var(--navy)}.header-nav a.active{color:var(--navy);font-weight:800}
+
+/* BREADCRUMB */
+.breadcrumb{background:var(--section-light);padding:10px 0;font-size:13px;color:var(--gray-600)}
+.breadcrumb a{color:var(--gray-600);text-decoration:none}.breadcrumb a:hover{color:var(--navy)}
+.breadcrumb span{color:var(--navy);font-weight:700}
+
+/* HERO */
+.hero{position:relative;min-height:640px;display:flex;align-items:center;background:var(--navy-deep);overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80');background-size:cover;background-position:center;opacity:.22}
+.hero-grad{position:absolute;inset:0;background:linear-gradient(110deg,rgba(5,30,74,.96) 42%,rgba(7,43,105,.5) 100%)}
+.hero-ray{position:absolute;top:-80px;right:-80px;width:480px;height:480px;background:radial-gradient(circle,rgba(233,206,16,.18) 0%,transparent 70%);border-radius:50%}
+.hero-ray2{position:absolute;bottom:-100px;right:25%;width:340px;height:340px;background:radial-gradient(circle,rgba(7,43,105,.4) 0%,transparent 70%);border-radius:50%}
+.hero-content{position:relative;z-index:2;padding:88px 0}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(233,206,16,.14);border:1px solid rgba(233,206,16,.4);border-radius:50px;padding:6px 16px;font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--gold-light);text-transform:uppercase;margin-bottom:22px}
+.hero-badge .pulse{width:8px;height:8px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(233,206,16,.7)}70%{box-shadow:0 0 0 10px rgba(233,206,16,0)}100%{box-shadow:0 0 0 0 rgba(233,206,16,0)}}
+.hero h1{font-size:clamp(40px,5.8vw,68px);color:var(--white);margin-bottom:20px;max-width:760px;font-weight:800}
+.hero h1 .hl-gold{color:var(--gold)}
+.hero-sub{font-size:18px;color:rgba(255,255,255,.78);max-width:600px;margin-bottom:32px;line-height:1.65;font-weight:500}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:44px;margin-top:52px;padding-top:32px;border-top:1px solid rgba(255,255,255,.12);flex-wrap:wrap}
+.hs-num{font-family:'Montserrat',sans-serif;font-size:42px;font-weight:900;color:var(--gold);line-height:1}
+.hs-label{font-size:13px;color:rgba(255,255,255,.6);margin-top:4px;font-weight:500}
+
+/* TRUST BAR */
+.trust-bar{background:var(--navy);padding:18px 0}
+.trust-bar .container{display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:9px;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;color:var(--white);white-space:nowrap}
+.trust-item .material-icons{color:rgba(255,255,255,.95)}
+
+/* SECTIONS */
+section{padding:84px 0}
+.section-dark{background:var(--navy-deep)}
+.section-light{background:var(--section-light)}
+.section-gray{background:var(--gray-50)}
+.stc{text-align:center;margin-bottom:52px}
+.stc h2{font-size:clamp(32px,3.8vw,48px);color:var(--text);margin-bottom:14px;font-weight:800;text-wrap:balance}
+.stc p{font-size:17px;color:var(--gray-600);max-width:620px;margin:0 auto;font-weight:500}
+.stc-dark h2{color:var(--white)}.stc-dark p{color:rgba(255,255,255,.65)}
+
+/* PROBLEM */
+.prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:768px){.prob-grid{grid-template-columns:1fr}}
+.prob-img{position:relative;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-md)}
+.prob-img img{width:100%;height:440px;object-fit:cover;display:block}
+.prob-badge{position:absolute;bottom:20px;left:20px;background:var(--navy);border-radius:var(--r);padding:14px 22px;box-shadow:var(--sh-lg)}
+.prob-badge .big{font-family:'Montserrat',sans-serif;font-size:38px;font-weight:900;color:var(--gold);line-height:1}
+.prob-badge .sm{font-size:13px;color:rgba(255,255,255,.7)}
+.prob-list{display:flex;flex-direction:column;gap:16px}
+.prob-item{display:flex;gap:14px;padding:20px;border-radius:var(--r);background:var(--white);border:1px solid var(--gray-200);box-shadow:var(--sh-sm);transition:box-shadow var(--t),transform var(--t)}
+.prob-item:hover{box-shadow:0 0 12px 2px rgba(7,43,105,.15);transform:translateY(-2px)}
+.prob-icon{width:48px;height:48px;border-radius:10px;background:rgba(7,43,105,.08);display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--navy);flex-shrink:0}
+.prob-item h4{font-family:'Montserrat',sans-serif;font-size:19px;margin-bottom:4px;font-weight:800}
+.prob-item p{font-size:14px;color:var(--gray-600);font-weight:500}
+
+/* STEPS */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:900px){.steps-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.steps-grid{grid-template-columns:1fr}}
+.step-card{text-align:center;padding:30px 22px;border:1px solid rgba(255,255,255,.08);border-radius:var(--r-lg);position:relative;transition:all var(--t);background:rgba(255,255,255,.02)}
+.step-card:hover{border-color:rgba(233,206,16,.5);transform:translateY(-4px)}
+.step-num{font-family:'Montserrat',sans-serif;font-size:62px;font-weight:900;color:rgba(255,255,255,.45);line-height:1;margin-bottom:8px}
+.step-icon{font-size:36px;margin-bottom:14px;display:block;color:#4DA3FF}
+.step-card h3{font-size:21px;color:var(--white);margin-bottom:8px;font-weight:800}
+.step-card p{font-size:14px;color:rgba(255,255,255,.6);line-height:1.6;font-weight:500}
+
+/* SYSTEMS / SEGMENTOS */
+.sys-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:900px){.sys-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.sys-grid{grid-template-columns:1fr}}
+.sys-card{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-md);transition:transform var(--t),box-shadow var(--t);background:var(--white)}
+.sys-card:hover{transform:translateY(-5px);box-shadow:var(--sh-lg)}
+.sys-img{height:200px;overflow:hidden;position:relative}
+.sys-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.sys-card:hover .sys-img img{transform:scale(1.05)}
+.sys-badge{position:absolute;top:14px;left:14px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:1px;padding:5px 12px;border-radius:var(--r-pill);text-transform:uppercase}
+.sys-body{padding:24px}
+.sys-body h3{font-size:23px;margin-bottom:8px;font-weight:800;color:var(--navy)}
+.sys-body p{font-size:14px;color:var(--gray-600);margin-bottom:14px;font-weight:500}
+.sys-bul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.sys-bul li{font-size:13.5px;color:var(--gray-600);display:flex;align-items:flex-start;gap:8px;font-weight:500}
+.sys-bul li::before{font-family:'Material Icons';content:'\e5ca';color:var(--navy);font-weight:400;flex-shrink:0;font-size:18px}
+
+/* CALCULATOR */
+.calc-wrap{background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy-card) 100%);border-radius:var(--r-lg);padding:46px;box-shadow:var(--sh-lg);border:1px solid rgba(233,206,16,.18);max-width:820px;margin:0 auto}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+@media(max-width:560px){.calc-row{grid-template-columns:1fr}}
+.fg label{display:block;font-size:12px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.fg input,.fg select{width:100%;padding:14px 16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:10px;color:#FFFFFF;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:500;transition:border-color var(--t)}
+.fg input:focus,.fg select:focus{outline:none;border-color:var(--gold)}
+.fg input::placeholder{color:rgba(255,255,255,.35)}
+.fg select option{background:var(--navy-deep);color:#FFFFFF}
+.calc-result-box{background:rgba(233,206,16,.08);border:1px solid rgba(233,206,16,.3);border-radius:var(--r);padding:26px;margin-top:22px;display:none;animation:fd .4s ease}
+@keyframes fd{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.calc-result-box.show{display:block}
+.calc-res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:center}
+@media(max-width:560px){.calc-res-grid{grid-template-columns:1fr}}
+.cr-num{font-family:'Montserrat',sans-serif;font-size:32px;font-weight:900;color:var(--gold-light);line-height:1.1}
+.cr-label{font-size:12px;color:rgba(255,255,255,.55);margin-top:4px;font-weight:600}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(7,43,105,.86);backdrop-filter:blur(6px);z-index:9000;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal-box{background:var(--white);border-radius:var(--r-lg);padding:42px 36px;max-width:480px;width:100%;box-shadow:0 24px 80px rgba(0,0,0,.5);position:relative;animation:modalIn .3s ease}
+@keyframes modalIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+.modal-close{position:absolute;top:14px;right:14px;background:var(--gray-100);border:none;border-radius:50%;width:32px;height:32px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--gray-600);transition:background var(--t)}
+.modal-close:hover{background:var(--gray-200)}
+.modal-box h3{font-size:26px;color:var(--navy);margin-bottom:6px;font-weight:800}
+.modal-box .modal-sub{font-size:14px;color:var(--gray-600);margin-bottom:24px}
+.modal-box .fg{margin-bottom:14px}
+.modal-box .fg label{color:var(--gray-600);font-size:12px}
+.modal-box .fg input{background:var(--gray-50);border-color:var(--gray-200);color:var(--text)}
+.modal-box .fg input:focus{border-color:var(--navy);background:var(--white)}
+.modal-box .fg input::placeholder{color:var(--gray-400)}
+.modal-err{font-size:12px;color:#DC2626;margin-top:4px;display:none}
+.modal-err.show{display:block}
+.modal-privacy{font-size:12px;color:var(--gray-400);text-align:center;margin-top:10px}
+.btn-modal-submit{width:100%;padding:17px;background:var(--gold);color:var(--navy);font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;letter-spacing:1px;border:none;border-radius:var(--r-pill);cursor:pointer;transition:all var(--t);margin-top:6px;display:flex;align-items:center;justify-content:center;gap:10px}
+.btn-modal-submit:hover{background:var(--gold-light);transform:translateY(-2px)}
+.btn-modal-submit.loading{opacity:.7;pointer-events:none}
+.spinner{width:20px;height:20px;border:2px solid rgba(7,43,105,.4);border-top-color:var(--navy);border-radius:50%;animation:spin .7s linear infinite;display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* DIFFERENTIALS */
+.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.diff-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.diff-grid{grid-template-columns:1fr}}
+.diff-card{text-align:center;padding:34px 22px;border-radius:var(--r-lg);border:1px solid var(--gray-200);background:var(--white);box-shadow:var(--sh-sm);transition:all var(--t)}
+.diff-card:hover{transform:translateY(-5px);box-shadow:0 0 12px 2px var(--navy-glow);border-color:rgba(7,43,105,.25)}
+.diff-icon{font-size:46px;margin-bottom:14px;display:block;color:var(--navy)}
+.diff-card h3{font-size:21px;margin-bottom:8px;font-weight:800;color:var(--navy)}
+.diff-card p{font-size:14px;color:var(--gray-600);line-height:1.6;font-weight:500}
+
+/* REVIEWS */
+.rev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:980px;margin:0 auto}
+@media(max-width:768px){.rev-grid{grid-template-columns:1fr}}
+.rev-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:28px;box-shadow:var(--sh-sm);position:relative;transition:box-shadow var(--t)}
+.rev-card:hover{box-shadow:var(--sh-md)}
+.rev-card::before{content:'"';font-family:Georgia,serif;font-size:74px;color:rgba(7,43,105,.08);position:absolute;top:8px;right:18px;line-height:1}
+.rev-stars{color:#F59E0B;font-size:18px;margin-bottom:12px;letter-spacing:2px}
+.rev-text{font-size:14.5px;color:var(--gray-600);margin-bottom:18px;line-height:1.7;font-style:italic;font-weight:500}
+.rev-author{display:flex;align-items:center;gap:11px}
+.rev-av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-card));display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:var(--white);flex-shrink:0}
+.rev-name{font-weight:800;font-size:15px;color:var(--navy)}
+.rev-loc{font-size:12px;color:var(--gray-400)}
+.gmb-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--r-pill);padding:9px 18px;font-size:14px;font-weight:600;color:var(--gray-800);margin-bottom:36px}
+
+/* FAQ */
+.faq-list{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r);overflow:hidden}
+.faq-q{width:100%;background:none;border:none;cursor:pointer;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;text-align:left;transition:background var(--t)}
+.faq-q:hover{background:var(--section-light)}.faq-q.open{background:var(--navy)}
+.faq-qt{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:700;color:var(--text)}
+.faq-q.open .faq-qt{color:var(--white)}
+.faq-ch{font-size:18px;color:var(--navy);flex-shrink:0;transition:transform var(--t)}
+.faq-q.open .faq-ch{transform:rotate(180deg);color:var(--gold)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding:0 22px;font-size:15px;color:var(--gray-600);line-height:1.8;font-weight:500}
+.faq-a.open{max-height:500px;padding:18px 22px}
+
+/* LEAD SECTION */
+.lead-sec{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);padding:84px 0;position:relative;overflow:hidden}
+.lead-sec::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(233,206,16,.15) 0%,transparent 70%);border-radius:50%}
+.lead-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2}
+@media(max-width:768px){.lead-grid{grid-template-columns:1fr;gap:36px}}
+.lead-left h2{font-size:clamp(36px,4vw,52px);color:var(--white);margin-bottom:18px;font-weight:800}
+.lead-left p{font-size:17px;color:rgba(255,255,255,.78);margin-bottom:26px;font-weight:500}
+.lead-guar{display:flex;flex-direction:column;gap:11px}
+.lead-gi{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:600;color:rgba(255,255,255,.92)}
+.lead-check{width:24px;height:24px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:13px;flex-shrink:0;font-weight:900}
+
+/* LEAD FORM */
+.lead-form{background:var(--white);border-radius:var(--r-lg);padding:36px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.lead-form h3{font-size:26px;color:var(--navy);margin-bottom:5px;font-weight:800}
+.lead-form-sub{font-size:13px;color:var(--gray-600);margin-bottom:24px;font-weight:600}
+.lead-form .fg{margin-bottom:13px}
+.lead-form .fg label{color:var(--gray-600);font-size:12px}
+.lead-form .fg input,.lead-form .fg select{background:var(--gray-50);border-color:var(--gray-200);color:var(--text)}
+.lead-form .fg input:focus,.lead-form .fg select:focus{border-color:var(--navy);background:var(--white)}
+.lead-form .fg input::placeholder{color:var(--gray-400)}
+.lead-form .fg select{background:var(--gray-50);color:var(--text)}.lead-form .fg select option{background:#FFFFFF;color:var(--text)}
+.btn-form-submit{width:100%;padding:17px;background:var(--gold);color:var(--navy);font-family:'Montserrat',sans-serif;font-size:19px;font-weight:900;letter-spacing:1px;border:none;border-radius:var(--r-pill);cursor:pointer;transition:all var(--t);margin-top:6px;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-form-submit:hover{background:var(--gold-light);transform:translateY(-2px)}
+.btn-form-submit.loading{opacity:.7;pointer-events:none}
+
+/* CITIES */
+.city-grid{display:flex;flex-wrap:wrap;gap:9px;justify-content:center}
+.city-tag{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-pill);padding:8px 16px;font-size:14px;font-weight:600;color:rgba(255,255,255,.78);transition:all var(--t);display:inline-flex;align-items:center;gap:5px}
+.city-tag:hover{background:rgba(233,206,16,.16);border-color:rgba(233,206,16,.5);color:var(--gold-light)}
+
+/* PROJECTS GALLERY */
+.projects-wrap{position:relative;max-width:1080px;margin:0 auto}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:768px){.projects-grid{grid-template-columns:repeat(2,1fr);gap:16px}}
+@media(max-width:480px){.projects-grid{grid-template-columns:1fr}}
+.proj-card{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-md);position:relative;aspect-ratio:1/1;cursor:pointer;transition:transform var(--t),box-shadow var(--t);background:var(--gray-100)}
+.proj-card img{transition:opacity .35s ease,transform .6s}
+.proj-card.fading img{opacity:0}
+.proj-arrow{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;background:var(--white);border:1px solid var(--gray-200);box-shadow:var(--sh-md);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;color:var(--navy);transition:all var(--t)}
+.proj-arrow:hover{background:var(--navy);color:var(--white);box-shadow:0 0 14px 3px var(--navy-glow),var(--sh-lg);transform:translateY(-50%) scale(1.08)}
+.proj-arrow.prev{left:-24px}
+.proj-arrow.next{right:-24px}
+.proj-arrow .material-icons{font-size:28px}
+@media(max-width:560px){.proj-arrow{width:42px;height:42px}.proj-arrow.prev{left:-6px}.proj-arrow.next{right:-6px}.proj-arrow .material-icons{font-size:24px}}
+.proj-card:hover{transform:translateY(-5px);box-shadow:0 0 14px 3px var(--navy-glow),var(--sh-lg)}
+.proj-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.proj-card:hover img{transform:scale(1.08)}
+.proj-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,43,105,.92) 100%);display:flex;align-items:flex-end;padding:18px;color:white;font-weight:700;opacity:0;transition:opacity var(--t)}
+.proj-card:hover .proj-overlay{opacity:1}
+.proj-overlay .material-icons{margin-right:6px;color:var(--gold)}
+.proj-overlay span{font-size:14px;display:flex;align-items:center}
+/* PARTNERS BAR */
+.partners{padding:54px 0;background:var(--gray-50);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)}
+.partners-title{text-align:center;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gray-600);margin-bottom:28px}
+.partners-row{display:flex;justify-content:center;align-items:center;flex-wrap:wrap}
+.partners-img{max-width:100%;height:auto;max-height:140px;display:block;margin:0 auto;filter:saturate(1.05)}
+
+/* FOOTER */
+.footer{background:var(--navy-deep);padding:64px 0 0}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px}
+@media(max-width:900px){.ft-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ft-grid{grid-template-columns:1fr}}
+.ft-brand img{height:48px;width:auto;margin-bottom:14px;filter:brightness(0) invert(1)}
+.ft-brand p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.8;margin-bottom:18px;font-weight:500}
+.soc-links{display:flex;gap:10px}
+.soc-a{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:18px;color:rgba(255,255,255,.85);text-decoration:none;transition:all var(--t)}
+.soc-a:hover{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.btn:focus-visible,.soc-a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.ft-col h4{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:var(--white);margin-bottom:14px;letter-spacing:.5px}
+.ft-links{list-style:none;display:flex;flex-direction:column;gap:8px}
+.ft-links a{font-size:14px;color:rgba(255,255,255,.55);text-decoration:none;transition:color var(--t);font-weight:500}
+.ft-links a:hover{color:var(--gold)}
+.ft-ci{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.ft-ci-icon{font-size:18px;flex-shrink:0;color:var(--gold);margin-top:2px}
+.ft-ci-text a, .ft-ci-text{font-size:14px;color:rgba(255,255,255,.55);text-decoration:none;font-weight:500}
+.ft-ci-text a:hover{color:var(--gold)}
+.ft-bot{border-top:1px solid rgba(255,255,255,.08);padding:18px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.ft-bot p{font-size:13px;color:rgba(255,255,255,.4);font-weight:500}
+.ft-bot a{color:rgba(255,255,255,.45);text-decoration:none}.ft-bot a:hover{color:var(--gold)}
+
+/* WPP FLOAT */
+.wpp-float{position:fixed;bottom:26px;right:26px;z-index:5000}
+.wpp-panel{position:fixed;bottom:100px;right:26px;z-index:4999;width:330px;background:var(--white);border-radius:var(--r-lg);box-shadow:0 16px 60px rgba(0,0,0,.3);display:none;overflow:hidden;animation:fd .3s ease}
+.wpp-panel.open{display:block}
+.wpp-panel-head{background:#25D366;padding:16px 20px;display:flex;align-items:center;justify-content:space-between}
+.wpp-panel-head span{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;color:var(--white);display:flex;align-items:center;gap:8px}
+.wpp-panel-close{background:rgba(255,255,255,.2);border:none;border-radius:50%;width:28px;height:28px;cursor:pointer;font-size:16px;color:var(--white);display:flex;align-items:center;justify-content:center}
+.wpp-panel-body{padding:20px}
+.wpp-panel-body .fg{margin-bottom:11px}
+.wpp-panel-body .fg label{color:var(--gray-600);font-size:12px}
+.wpp-panel-body .fg input,.wpp-panel-body .fg textarea{width:100%;padding:11px 13px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:8px;color:var(--text);font-family:'Montserrat',sans-serif;font-size:14px;transition:border-color var(--t);font-weight:500}
+.wpp-panel-body .fg input:focus,.wpp-panel-body .fg textarea:focus{outline:none;border-color:#25D366}
+.wpp-panel-body .fg textarea{height:74px;resize:none}
+.btn-wpp-submit{width:100%;padding:14px;background:#25D366;color:var(--white);font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;border:none;border-radius:var(--r-pill);cursor:pointer;transition:all var(--t);display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-wpp-submit:hover{background:#1DAA56;transform:translateY(-1px)}
+.btn-wpp-submit.loading{opacity:.7;pointer-events:none}
+.wpp-btn-trigger{width:62px;height:62px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);cursor:pointer;border:none;animation:wppP 3s infinite;transition:transform var(--t)}
+.wpp-btn-trigger:hover{transform:scale(1.1)}
+.wpp-btn-trigger svg{width:32px;height:32px;fill:white}
+@keyframes wppP{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.45)}50%{box-shadow:0 4px 30px rgba(37,211,102,.7),0 0 0 10px rgba(37,211,102,.12)}}
+
+/* HAMBURGER + MOBILE NAV */
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--navy)}
+.hamburger .material-icons{font-size:30px}
+
+/* MISC RESPONSIVE */
+.mobile-hide{display:flex}
+.mobile-only{display:none}
+@media(max-width:900px){
+  .mobile-hide{display:none}
+  .hamburger{display:inline-flex}
+  .header-nav.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:16px;border-top:1px solid var(--gray-200);box-shadow:var(--sh-md);align-items:flex-start;gap:8px}
+  .header-nav.open a{width:100%;padding:12px 14px}
+}
+@media(max-width:768px){
+  section{padding:60px 0}
+  .hero{min-height:540px}
+  .hero-content{padding:64px 0}
+  .hero-stats{gap:20px}
+  .calc-wrap{padding:28px 18px}
+  .lead-form{padding:26px 18px}
+  .topbar{font-size:12px}
+  .tb-side{gap:14px}
+}
+@media(max-width:560px){
+  .trust-bar .container{gap:14px}
+  .trust-item{font-size:14px}
+  .hero-actions .btn{width:100%;justify-content:center}
+  .lead-sec{padding:60px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="container">
+    <div class="tb-side">
+      <div class="tb-item"><span class="material-icons" aria-hidden="true">location_on</span> <span>{{CLIENT_CITY}} · {{CLIENT_REGION}}</span></div>
+    </div>
+    <div class="tb-side">
+      <div class="tb-item"><span class="material-icons" aria-hidden="true">phone</span> <a href="tel:+{{WHATSAPP_FULL}}">{{WHATSAPP_DISPLAY}}</a></div>
+      <div class="tb-item"><a href="{{INSTAGRAM_URL}}" target="_blank" rel="noopener">Instagram</a></div>
+      <div class="tb-item"><a href="{{FACEBOOK_URL}}" target="_blank" rel="noopener">Facebook</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="#" class="logo-wrap" aria-label="{{CLIENT_NAME}}">
+        <img src="assets/logo-{{CLIENT_SLUG}}.png" alt="{{CLIENT_NAME}}" width="160" height="54">
+      </a>
+      <nav class="header-nav mobile-hide" id="mainNav" aria-label="Navegação">
+        <a href="#sobre">Sobre</a>
+        <a href="#segmentos">Segmentos</a>
+        <a href="#calculadora">Calculadora</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#depoimentos">Clientes</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:10px">
+        <a href="#orcamento" class="btn btn-gold" style="font-size:14px;padding:11px 22px">Orçamento Grátis</a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu" aria-expanded="false">
+          <span class="material-icons">menu</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="container">
+    <a href="https://{{CLIENT_DOMAIN}}/">{{CLIENT_NAME}}</a> &nbsp;›&nbsp;
+    <span>Energia Solar</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="h1-hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grad" aria-hidden="true"></div>
+  <div class="hero-ray" aria-hidden="true"></div>
+  <div class="hero-ray2" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge"><div class="pulse" aria-hidden="true"></div><span class="material-icons" aria-hidden="true">wb_sunny</span> Energia Solar · {{CLIENT_REGION}}</div>
+      <h1 id="h1-hero">Pague menos em sua <span class="hl-gold">conta de energia</span> com a {{CLIENT_SHORT_NAME}}</h1>
+      <p class="hero-sub">Ajudamos <strong style="color:#FFFFFF">empresas, residências e fazendas</strong> a gerar a própria energia e economizar até <strong style="color:#FFE74A">95% todos os meses</strong>. Projeto personalizado e instalação completa.</p>
+      <div class="hero-actions">
+        <a href="#orcamento" class="btn btn-gold"><span class="material-icons" aria-hidden="true">wb_sunny</span> Faça um orçamento</a>
+        <a href="#calculadora" class="btn btn-outline-white"><span class="material-icons" aria-hidden="true">calculate</span> Calcule quanto você pode economizar</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hs-num">+100</div><div class="hs-label">Cidades atendidas</div></div>
+        <div><div class="hs-num">+4.000</div><div class="hs-label">Instalações realizadas</div></div>
+        <div><div class="hs-num">+6.000</div><div class="hs-label">kWp instalados</div></div>
+        <div><div class="hs-num">25+</div><div class="hs-label">Anos de eficiência</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar" role="complementary">
+  <div class="container">
+    <div class="trust-item"><span class="material-icons" aria-hidden="true">check_circle</span> Orçamento 100% gratuito</div>
+    <div class="trust-item"><span class="material-icons" aria-hidden="true">timer</span> Payback de até 5 anos</div>
+    <div class="trust-item"><span class="material-icons" aria-hidden="true">verified_user</span> +25 anos de eficiência</div>
+    <div class="trust-item"><span class="material-icons" aria-hidden="true">credit_card</span> Financiamento facilitado</div>
+  </div>
+</div>
+
+<!-- PROBLEM SECTION -->
+<section id="sobre">
+  <div class="container">
+    <div class="prob-grid">
+      <div class="prob-img">
+        <img src="img/homem-preocupado-conta.jpg" alt="Homem preocupado olhando para a conta de energia elétrica em casa" width="700" height="440" loading="lazy">
+        <div class="prob-badge">
+          <div class="big">95%</div>
+          <div class="sm">de redução possível<br>na sua conta <span class="material-icons" aria-hidden="true">wb_sunny</span></div>
+        </div>
+      </div>
+      <div>
+        <span class="sec-label">Por que instalar agora?</span>
+        <h2 style="font-size:clamp(30px,3.4vw,46px);margin-bottom:20px">Sua Conta de Luz Sobe Todo Ano — E Continua Subindo</h2>
+        <p style="color:var(--gray-600);margin-bottom:24px;font-weight:500">A conta de luz reajusta em média <strong>15% ao ano</strong>. Enquanto você adia, a distribuidora lucra. Com energia solar, você inverte esse jogo e transforma despesa em patrimônio.</p>
+        <div class="prob-list">
+          <div class="prob-item">
+            <div class="prob-icon"><span class="material-icons" aria-hidden="true">trending_up</span></div>
+            <div><h4>Reajustes Imprevisíveis</h4><p>Bandeiras tarifárias e aumentos anuais tornam impossível planejar o orçamento.</p></div>
+          </div>
+          <div class="prob-item">
+            <div class="prob-icon"><span class="material-icons" aria-hidden="true">savings</span></div>
+            <div><h4>Comece a Lucrar Agora</h4><p>Retorno em até 5 anos e mais de 20 anos de economia. Melhor que poupança ou CDI.</p></div>
+          </div>
+          <div class="prob-item">
+            <div class="prob-icon"><span class="material-icons" aria-hidden="true">home</span></div>
+            <div><h4>Valorização do Imóvel</h4><p>Casas e empresas com energia solar valem até <strong>8% a mais</strong> no mercado.</p></div>
+          </div>
+          <div class="prob-item">
+            <div class="prob-icon"><span class="material-icons" aria-hidden="true">eco</span></div>
+            <div><h4>Energia Limpa</h4><p>Cada instalação salva o equivalente a <strong>270 árvores</strong>. Sustentável e infinita.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section-dark" aria-labelledby="h2-steps">
+  <div class="container">
+    <div class="stc stc-dark">
+      <span class="sec-label" style="color:var(--gold)">Como funciona</span>
+      <h2 id="h2-steps">Da Visita à Economia: 4 Passos Simples</h2>
+      <p>Cuidamos de tudo — do projeto à homologação com a concessionária.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card"><div class="step-num">01</div><span class="step-icon"><span class="material-icons" aria-hidden="true">search</span></span><h3>Visita Técnica Gratuita</h3><p>Analisamos seu telhado, consumo e localização para projetar o sistema ideal.</p></div>
+      <div class="step-card"><div class="step-num">02</div><span class="step-icon"><span class="material-icons" aria-hidden="true">design_services</span></span><h3>Projeto Personalizado</h3><p>Engenharia elétrica, memorial descritivo e ART inclusos no projeto fotovoltaico.</p></div>
+      <div class="step-card"><div class="step-num">03</div><span class="step-icon"><span class="material-icons" aria-hidden="true">build</span></span><h3>Instalação Profissional</h3><p>Equipe técnica qualificada com equipamentos de alto padrão. Seguro, limpo e no prazo.</p></div>
+      <div class="step-card"><div class="step-num">04</div><span class="step-icon"><span class="material-icons" aria-hidden="true">check_circle</span></span><h3>Homologação e Economia</h3><p>Cuidamos de toda a burocracia junto à concessionária local. Você só economiza desde o 1º mês.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SEGMENTS -->
+<section class="section-light" id="segmentos" aria-labelledby="h2-sys">
+  <div class="container">
+    <div class="stc">
+      <span class="sec-label">Para você ou sua empresa</span>
+      <h2 id="h2-sys">Energia Solar para Cada Tipo de Cliente</h2>
+      <p>Atendemos residências, empresas e fazendas com soluções sob medida pra sua necessidade de consumo.</p>
+    </div>
+    <div class="sys-grid">
+      <article class="sys-card">
+        <div class="sys-img">
+          <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=800&q=80" alt="Energia solar residencial em {{CLIENT_CITY}}" loading="lazy">
+          <div class="sys-badge" style="background:var(--gold);color:var(--navy)">Residencial</div>
+        </div>
+        <div class="sys-body"><h3>Para sua Casa</h3><p>Reduza até 95% da conta e valorize seu imóvel com energia limpa e renovável.</p>
+        <ul class="sys-bul"><li>Economia desde o 1º mês</li><li>Painéis com 20 anos de garantia</li><li>Mais de 25 anos de eficiência</li><li>Financiamento facilitado</li></ul></div>
+      </article>
+      <article class="sys-card">
+        <div class="sys-img">
+          <img src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?w=800&q=80" alt="Energia solar empresarial e comercial" loading="lazy">
+          <div class="sys-badge" style="background:var(--navy);color:var(--white)">Empresas</div>
+        </div>
+        <div class="sys-body"><h3>Para sua Empresa</h3><p>Diminua o custo operacional e aumente a competitividade com energia própria de baixo custo.</p>
+        <ul class="sys-bul"><li>Payback de até 5 anos</li><li>Projeto sob medida</li><li>Financiamento facilitado</li><li>Vantagem competitiva</li></ul></div>
+      </article>
+      <article class="sys-card">
+        <div class="sys-img">
+          <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&q=80" alt="Energia solar para fazendas e agronegócio" loading="lazy">
+          <div class="sys-badge" style="background:var(--navy-deep);color:var(--white)">Fazendas</div>
+        </div>
+        <div class="sys-body"><h3>Para o Agronegócio</h3><p>Energia para irrigação, ordenha, secadores e toda a operação rural com retorno garantido.</p>
+        <ul class="sys-bul"><li>Financiamento facilitado</li><li>Reduz custo de produção</li><li>Sistema robusto e durável</li><li>Manutenção mínima</li></ul></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculadora" aria-labelledby="h2-calc">
+  <div class="container">
+    <div class="stc">
+      <span class="sec-label">Calculadora de Economia</span>
+      <h2 id="h2-calc">Quanto você pode economizar com energia&nbsp;solar?</h2>
+      <p>Simule agora seu potencial de economia mensal e o tempo de retorno do investimento.</p>
+    </div>
+    <div class="calc-wrap">
+      <div class="calc-row">
+        <div class="fg">
+          <label for="calc-conta"><span class="material-icons" aria-hidden="true">lightbulb</span> Valor médio da conta de luz (R$)</label>
+          <input type="number" id="calc-conta" placeholder="Ex: 400" min="50">
+        </div>
+        <div class="fg">
+          <label for="calc-cidade"><span class="material-icons" aria-hidden="true">location_on</span> Sua cidade</label>
+          <!-- TODO: SUBSTITUIR LISTA DE CIDADES PELAS QUE O CLIENTE ATENDE.
+               Manter "Selecione..." e "Outra cidade" como primeira/última opção. -->
+          <select id="calc-cidade">
+            <option value="">Selecione...</option>
+            <option>{{CLIENT_CITY}}</option>
+            <option>Outra cidade</option>
+          </select>
+        </div>
+      </div>
+      <button onclick="calcEconomia()" class="btn btn-white" style="font-size:18px;padding:16px 36px"><span class="material-icons" aria-hidden="true">bolt</span> Calcular Minha Economia</button>
+      <div class="calc-result-box" id="calcBox">
+        <p style="color:var(--gold-light);font-family:'Montserrat';font-size:18px;font-weight:800;margin-bottom:16px"><span class="material-icons" aria-hidden="true">check_circle</span> Estimativa para você:</p>
+        <div class="calc-res-grid">
+          <div><div class="cr-num" id="cr-mensal">—</div><div class="cr-label">Economia mensal</div></div>
+          <div><div class="cr-num" id="cr-anual">—</div><div class="cr-label">Economia no 1º ano</div></div>
+          <div><div class="cr-num" id="cr-payback">—</div><div class="cr-label">Payback do investimento</div></div>
+        </div>
+        <p style="color:rgba(255,255,255,.45);font-size:12px;margin-top:14px;text-align:center">*Estimativa com 95% de eficiência. Solicite orçamento exato gratuitamente.</p>
+        <div style="text-align:center;margin-top:20px">
+          <button onclick="abrirModalOrcamento()" class="btn btn-gold" style="font-size:17px"><span class="material-icons" aria-hidden="true">wb_sunny</span> Quero Orçamento Exato Grátis</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIALS -->
+<section class="section-light" id="diferenciais" aria-labelledby="h2-diff">
+  <div class="container">
+    <div class="stc">
+      <span class="sec-label">Por que a {{CLIENT_SHORT_NAME}}?</span>
+      <h2 id="h2-diff">Mais do que uma empresa, somos seu parceiro</h2>
+      <p>Mais de 4.000 instalações realizadas em 100+ cidades. Tradição, qualidade e atendimento de ponta a ponta.</p>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-card"><span class="diff-icon"><span class="material-icons" aria-hidden="true">paid</span></span><h3>Payback de até 5 anos</h3><p>Retorno do investimento em até 5 anos. Após o payback, mais de 20 anos gerando energia praticamente de graça.</p></div>
+      <div class="diff-card"><span class="diff-icon"><span class="material-icons" aria-hidden="true">savings</span></span><h3>Economia até 95%</h3><p>Redução imediata na conta desde o primeiro mês após a instalação e homologação.</p></div>
+      <div class="diff-card"><span class="diff-icon"><span class="material-icons" aria-hidden="true">timer</span></span><h3>25 anos de eficiência</h3><p>Painéis com 20 anos de garantia e mais de 25 anos de eficiência. Manutenção mínima de 1 a 2 visitas por ano.</p></div>
+      <div class="diff-card"><span class="diff-icon"><span class="material-icons" aria-hidden="true">eco</span></span><h3>Energia Limpa</h3><p>Cada projeto evita o desmatamento equivalente a 270 árvores. Sustentável e ilimitada.</p></div>
+      <div class="diff-card"><span class="diff-icon"><span class="material-icons" aria-hidden="true">trending_up</span></span><h3>Valorize seu Imóvel</h3><p>Imóveis com energia solar têm valorização e linhas de crédito ampliadas com juros menores.</p></div>
+      <div class="diff-card"><span class="diff-icon"><span class="material-icons" aria-hidden="true">handshake</span></span><h3>Atendimento dedicado</h3><p>Da visita técnica ao pós-venda, acompanhamos cada projeto com equipe dedicada.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETOS -->
+<section id="projetos" aria-labelledby="h2-proj">
+  <div class="container">
+    <div class="stc">
+      <span class="sec-label">Cases reais</span>
+      <h2 id="h2-proj">Veja Alguns dos Nossos Projetos</h2>
+      <p>+4.000 instalações realizadas em residências, empresas e fazendas no {{CLIENT_REGION}}. Cada projeto entregue com qualidade de ponta a ponta.</p>
+    </div>
+    <div class="projects-wrap">
+      <button class="proj-arrow prev" onclick="prevProjects()" aria-label="Fotos anteriores" type="button"><span class="material-icons">chevron_left</span></button>
+      <div class="projects-grid" id="projGrid">
+        <div class="proj-card" id="proj-card-0">
+          <img id="proj-img-0" src="img/1.png" alt="Projeto de energia solar {{CLIENT_SHORT_NAME}}" loading="lazy">
+          <div class="proj-overlay"><span><span class="material-icons" aria-hidden="true">wb_sunny</span> Projeto {{CLIENT_SHORT_NAME}}</span></div>
+        </div>
+        <div class="proj-card" id="proj-card-1">
+          <img id="proj-img-1" src="img/2.png" alt="Projeto de energia solar {{CLIENT_SHORT_NAME}}" loading="lazy">
+          <div class="proj-overlay"><span><span class="material-icons" aria-hidden="true">wb_sunny</span> Projeto {{CLIENT_SHORT_NAME}}</span></div>
+        </div>
+        <div class="proj-card" id="proj-card-2">
+          <img id="proj-img-2" src="img/3.png" alt="Projeto de energia solar {{CLIENT_SHORT_NAME}}" loading="lazy">
+          <div class="proj-overlay"><span><span class="material-icons" aria-hidden="true">wb_sunny</span> Projeto {{CLIENT_SHORT_NAME}}</span></div>
+        </div>
+      </div>
+      <button class="proj-arrow next" onclick="nextProjects()" aria-label="Próximas fotos" type="button"><span class="material-icons">chevron_right</span></button>
+    </div>
+    <div style="text-align:center;margin-top:42px">
+      <a href="#orcamento" class="btn btn-gold"><span class="material-icons" aria-hidden="true">wb_sunny</span> Quero Meu Projeto</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- REVIEWS -->
+<section id="depoimentos" aria-labelledby="h2-rev">
+  <div class="container">
+    <div class="stc">
+      <span class="sec-label">Quem já economiza com a {{CLIENT_SHORT_NAME}}</span>
+      <h2 id="h2-rev">O Que Nossos Clientes Dizem</h2>
+    </div>
+    <div style="text-align:center">
+      <div class="gmb-badge">
+        <span style="font-size:20px;color:#F59E0B"><span class="material-icons" aria-hidden="true">star</span></span>
+        <strong>4,9 / 5,0</strong> · +4.000 instalações realizadas em {{CLIENT_REGION}}
+      </div>
+    </div>
+    <!-- TODO: SUBSTITUIR POR REVIEWS REAIS DO CLIENTE.
+         Mantenha 4 cards. Estrutura: avatar (2 letras), nome completo, localização. -->
+    <div class="rev-grid">
+      <div class="rev-card"><div class="rev-stars" aria-label="5 estrelas">★★★★★</div><p class="rev-text">"Gostei bastante do atendimento, o pessoal é muito profissional e trabalham com equipamentos de qualidade, a instalação ficou impecável!!!"</p><div class="rev-author"><div class="rev-av">CA</div><div><div class="rev-name">Cliente A</div><div class="rev-loc">{{CLIENT_CITY}} · {{CLIENT_STATE}}</div></div></div></div>
+      <div class="rev-card"><div class="rev-stars" aria-label="5 estrelas">★★★★★</div><p class="rev-text">"O atendimento é excelente. A venda ocorre de forma transparente e é muito importante para a tomada de decisão. O acompanhamento de todo o processo é feito por uma equipe muito profissional e o pós-venda é o diferencial. Empresa de confiança!"</p><div class="rev-author"><div class="rev-av">CB</div><div><div class="rev-name">Cliente B</div><div class="rev-loc">{{CLIENT_CITY}} · {{CLIENT_STATE}}</div></div></div></div>
+      <div class="rev-card"><div class="rev-stars" aria-label="5 estrelas">★★★★★</div><p class="rev-text">"Ótimo atendimento, preço e suporte. Super recomendo!"</p><div class="rev-author"><div class="rev-av">CC</div><div><div class="rev-name">Cliente C</div><div class="rev-loc">{{CLIENT_CITY}} · {{CLIENT_STATE}}</div></div></div></div>
+      <div class="rev-card"><div class="rev-stars" aria-label="5 estrelas">★★★★★</div><p class="rev-text">"Excelência em atendimento, profissionais qualificados e agilidade em prestação do serviço."</p><div class="rev-author"><div class="rev-av">CD</div><div><div class="rev-name">Cliente D</div><div class="rev-loc">{{CLIENT_CITY}} · {{CLIENT_STATE}}</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD FORM -->
+<section class="lead-sec" id="orcamento" aria-labelledby="h2-form">
+  <div class="container">
+    <div class="lead-grid">
+      <div class="lead-left">
+        <span class="sec-label" style="color:rgba(255,255,255,.7)">Solicite agora</span>
+        <h2 id="h2-form">Orçamento Grátis e Sem Compromisso</h2>
+        <p>Preencha o formulário ao lado. Nossa equipe retorna em até <strong style="color:var(--gold-light)">2 horas</strong> com uma simulação personalizada para o seu consumo.</p>
+        <div class="lead-guar">
+          <div class="lead-gi"><div class="lead-check"><span class="material-icons" aria-hidden="true">check</span></div>Visita técnica 100% gratuita</div>
+          <div class="lead-gi"><div class="lead-check"><span class="material-icons" aria-hidden="true">check</span></div>Sem compromisso de compra</div>
+          <div class="lead-gi"><div class="lead-check"><span class="material-icons" aria-hidden="true">check</span></div>Resposta em até 2 horas</div>
+          <div class="lead-gi"><div class="lead-check"><span class="material-icons" aria-hidden="true">check</span></div>Payback de até 5 anos</div>
+          <div class="lead-gi"><div class="lead-check"><span class="material-icons" aria-hidden="true">check</span></div>20 anos de garantia · 25+ anos de eficiência</div>
+        </div>
+      </div>
+      <div class="lead-form">
+        <h3>Solicitar Orçamento Solar</h3>
+        <p class="lead-form-sub">Residencial · Empresarial · Fazenda</p>
+        <form id="leadFormMain" onsubmit="submitLeadForm(event)">
+          <div class="fg"><label for="f-nome">Nome completo *</label><input type="text" id="f-nome" placeholder="Seu nome" required autocomplete="name"></div>
+          <div class="fg"><label for="f-tel">WhatsApp *</label><input type="tel" id="f-tel" placeholder="({{WHATSAPP_DDD}}) 9 0000-0000" required inputmode="tel"></div>
+          <div class="calc-row" style="margin-bottom:0">
+            <div class="fg"><label for="f-cidade">Cidade *</label><select id="f-cidade" required><option value="">Selecione...</option><option>{{CLIENT_CITY}}</option><option>Outra cidade</option></select></div><!-- TODO: adicionar mais options conforme cidades atendidas -->
+            <div class="fg"><label for="f-conta">Conta de luz (R$) *</label><input type="number" id="f-conta" placeholder="Ex: 400" min="1" required></div>
+          </div>
+          <div class="fg" style="margin-top:12px"><label for="f-segmento">Segmento</label><select id="f-segmento"><option value="">Selecione o segmento</option><option>Residencial</option><option>Comercial</option><option>Empresarial</option><option>Fazenda / Rural</option></select></div>
+          <button type="submit" class="btn-form-submit" id="btn-main-submit">
+            <span id="btn-main-text"><span class="material-icons" aria-hidden="true">wb_sunny</span> QUERO MEU ORÇAMENTO GRATUITO</span>
+            <span class="spinner" id="spin-main"></span>
+          </button>
+        </form>
+        <p style="font-size:12px;color:var(--gray-400);text-align:center;margin-top:12px"><span class="material-icons" aria-hidden="true">lock</span> Dados seguros. Sem spam.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" aria-labelledby="h2-faq">
+  <div class="container">
+    <div class="stc"><span class="sec-label">Dúvidas frequentes</span><h2 id="h2-faq">Perguntas Sobre Energia Solar</h2></div>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)" aria-expanded="false"><span class="faq-qt">Quanto custa instalar energia solar?</span><span class="faq-ch">▼</span></button><div class="faq-a">A maior parte dos projetos residenciais fica entre <strong>R$ 8.000 e R$ 15.000</strong>, com <strong>payback de até 5 anos</strong>. Os painéis têm <strong>garantia de 20 anos</strong> e mais de <strong>25 anos de eficiência</strong>. Solicite orçamento gratuito para valores exatos no seu caso.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)" aria-expanded="false"><span class="faq-qt">Em quanto tempo a energia solar se paga?</span><span class="faq-ch">▼</span></button><div class="faq-a">De <strong>2 a 5 anos</strong>. Após esse período, você gera energia praticamente de graça por mais 20 a 25 anos. Com os reajustes anuais das tarifas, o retorno tende a ser cada vez mais rápido — melhor que poupança e CDI.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)" aria-expanded="false"><span class="faq-qt">A energia solar funciona em dias nublados?</span><span class="faq-ch">▼</span></button><div class="faq-a">Sim. Os painéis fotovoltaicos funcionam com luz difusa. A geração é reduzida em comparação a dias ensolarados, mas o sistema continua produzindo. {{CLIENT_REGION}} tem uma das melhores irradiações solares do Brasil.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)" aria-expanded="false"><span class="faq-qt">Posso financiar o sistema solar?</span><span class="faq-ch">▼</span></button><div class="faq-a">Sim. Linhas de financiamento que trabalhamos: <strong>Santander, BV, Sol Fácil, Sol Agora, BTG, Bel Credit, antecipação de FGTS e empréstimo consignado</strong>. Em muitos casos a parcela do financiamento é menor que a economia gerada na conta de luz, ou seja, você financia o sistema com o próprio dinheiro que pagaria à concessionária.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)" aria-expanded="false"><span class="faq-qt">A {{CLIENT_SHORT_NAME}} atende minha cidade?</span><span class="faq-ch">▼</span></button><div class="faq-a">Atendemos {{CLIENT_REGION}} com base em {{CLIENT_CITY}} ({{CLIENT_STATE}}). Solicite orçamento e confirmamos o atendimento na sua localização.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CITIES -->
+<section class="section-dark" aria-labelledby="h2-cid">
+  <div class="container">
+    <div class="stc stc-dark">
+      <span class="sec-label" style="color:var(--gold)">Área de atuação</span>
+      <h2 id="h2-cid">Atendemos +100 Cidades em Minas Gerais</h2>
+      <p>Energia solar instalada por especialistas em toda a {{CLIENT_REGION}}.</p>
+    </div>
+    <!-- TODO: SUBSTITUIR PELA LISTA REAL DE CIDADES ATENDIDAS PELO CLIENTE.
+         Sugerimos 12-18 cidades + 1 tag final "e mais X+ cidades". -->
+    <div class="city-grid">
+      <span class="city-tag"><span class="material-icons" aria-hidden="true">location_on</span> {{CLIENT_CITY}}</span>
+      <span class="city-tag"><span class="material-icons" aria-hidden="true">location_on</span> Cidade 2</span>
+      <span class="city-tag"><span class="material-icons" aria-hidden="true">location_on</span> Cidade 3</span>
+      <span class="city-tag"><span class="material-icons" aria-hidden="true">location_on</span> Cidade 4</span>
+      <span class="city-tag"><span class="material-icons" aria-hidden="true">location_on</span> Cidade 5</span>
+      <span class="city-tag"><span class="material-icons" aria-hidden="true">location_on</span> e toda a {{CLIENT_REGION}}</span>
+    </div>
+    <div style="text-align:center;margin-top:42px">
+      <a href="#orcamento" class="btn btn-gold"><span class="material-icons" aria-hidden="true">wb_sunny</span> Faça um orçamento</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <img src="assets/logo-{{CLIENT_SLUG}}.png" alt="{{CLIENT_NAME}}" width="180" height="60">
+        <p>Especialistas em energia solar fotovoltaica para residências, empresas e fazendas. Mais de 4.000 instalações realizadas no {{CLIENT_REGION}}.</p>
+        <div class="soc-links">
+          <a href="{{INSTAGRAM_URL}}" target="_blank" rel="noopener" class="soc-a" aria-label="Instagram"><span class="material-icons" aria-hidden="true">photo_camera</span></a>
+          <a href="{{FACEBOOK_URL}}" target="_blank" rel="noopener" class="soc-a" aria-label="Facebook"><span class="material-icons" aria-hidden="true">thumb_up</span></a>
+          <a href="{{LINKEDIN_URL}}" target="_blank" rel="noopener" class="soc-a" aria-label="LinkedIn"><span class="material-icons" aria-hidden="true">work</span></a>
+          <a href="javascript:toggleWpp()" class="soc-a" aria-label="WhatsApp"><span class="material-icons" aria-hidden="true">chat</span></a>
+        </div>
+      </div>
+      <div class="ft-col"><h4>Soluções</h4><ul class="ft-links"><li><a href="#segmentos">Residencial</a></li><li><a href="#segmentos">Empresarial</a></li><li><a href="#segmentos">Fazenda / Rural</a></li><li><a href="#calculadora">Calculadora</a></li><li><a href="#orcamento">Orçamento Grátis</a></li></ul></div>
+      <div class="ft-col"><h4>Institucional</h4><ul class="ft-links"><li><a href="#sobre">Sobre</a></li><li><a href="#diferenciais">Diferenciais</a></li><li><a href="#depoimentos">Clientes</a></li><li><a href="#faq">FAQ</a></li><li><a href="https://{{CLIENT_DOMAIN}}/contato/" target="_blank" rel="noopener">Contato</a></li></ul></div>
+      <div class="ft-col"><h4>Contato</h4>
+        <div class="ft-ci"><span class="ft-ci-icon"><span class="material-icons" aria-hidden="true">location_on</span></span><div class="ft-ci-text"><strong style="color:rgba(255,255,255,.85)">{{CLIENT_CITY}} · {{CLIENT_STATE}}</strong><br><a href="tel:+{{WHATSAPP_FULL}}">{{WHATSAPP_DISPLAY}}</a></div></div>
+        <!-- TODO: se o cliente tiver mais unidades, duplique o bloco abaixo.
+        <div class="ft-ci"><span class="ft-ci-icon"><span class="material-icons" aria-hidden="true">location_on</span></span><div class="ft-ci-text"><strong style="color:rgba(255,255,255,.85)">CIDADE2 · UF</strong><br><a href="tel:+55DDDXXXXXXXX">(DDD) XXXX-XXXX</a></div></div>
+        -->
+        <div class="ft-ci"><span class="ft-ci-icon"><span class="material-icons" aria-hidden="true">chat</span></span><div class="ft-ci-text"><a href="https://wa.me/{{WHATSAPP_FULL}}" target="_blank" rel="noopener">WhatsApp Direto</a></div></div>
+        <div class="ft-ci"><span class="ft-ci-icon"><span class="material-icons" aria-hidden="true">schedule</span></span><div class="ft-ci-text" style="font-size:13px;color:rgba(255,255,255,.4)">Seg–Sex 8h–18h · Sáb 8h–12h</div></div>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <p>© 2026 {{CLIENT_NAME}} · Todos os direitos reservados.</p>
+      <p>
+        <a href="https://{{CLIENT_DOMAIN}}/">{{CLIENT_DOMAIN}}</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL ORÇAMENTO -->
+<div class="modal-overlay" id="modalOrcamento" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-box">
+    <button class="modal-close" onclick="fecharModal()" aria-label="Fechar">✕</button>
+    <h3 id="modal-title"><span class="material-icons" aria-hidden="true">wb_sunny</span> Orçamento Exato Gratuito</h3>
+    <p class="modal-sub">Informe seus dados e receba sua simulação personalizada em até 2 horas.</p>
+    <form id="modalForm" onsubmit="submitModal(event)">
+      <div class="fg">
+        <label for="m-nome">Nome *</label>
+        <input type="text" id="m-nome" placeholder="Seu nome" required autocomplete="name">
+      </div>
+      <div class="fg">
+        <label for="m-tel">WhatsApp / Telefone *</label>
+        <input type="tel" id="m-tel" placeholder="({{WHATSAPP_DDD}}) 9 0000-0000" required inputmode="tel" autocomplete="tel">
+        <div class="modal-err" id="m-tel-err">Informe um telefone válido com DDD.</div>
+      </div>
+      <button type="submit" class="btn-modal-submit" id="btn-modal">
+        <span id="btn-modal-text"><span class="material-icons" aria-hidden="true">wb_sunny</span> RECEBER MEU ORÇAMENTO</span>
+        <span class="spinner" id="spin-modal"></span>
+      </button>
+    </form>
+    <p class="modal-privacy"><span class="material-icons" aria-hidden="true">lock</span> Seus dados estão seguros. Não enviamos spam.</p>
+  </div>
+</div>
+
+<!-- WHATSAPP PANEL -->
+<div class="wpp-panel" id="wppPanel">
+  <div class="wpp-panel-head">
+    <span><span class="material-icons" aria-hidden="true">chat</span> {{CLIENT_NAME}}</span>
+    <button class="wpp-panel-close" onclick="toggleWpp()" aria-label="Fechar">✕</button>
+  </div>
+  <div class="wpp-panel-body">
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px;font-weight:500">Olá! Como podemos ajudar você? Preencha abaixo e respondemos pelo WhatsApp.</p>
+    <form id="wppForm" onsubmit="submitWpp(event)">
+      <div class="fg"><label for="w-nome">Nome *</label><input type="text" id="w-nome" placeholder="Seu nome" required></div>
+      <div class="fg"><label for="w-tel">WhatsApp *</label><input type="tel" id="w-tel" placeholder="({{WHATSAPP_DDD}}) 9 0000-0000" required inputmode="tel"></div>
+      <div class="fg"><label for="w-email">E-mail *</label><input type="email" id="w-email" placeholder="seu@email.com" required></div>
+      <div class="fg"><label for="w-msg">Mensagem</label><textarea id="w-msg" placeholder="Ex: Quero um orçamento de energia solar residencial em {{CLIENT_CITY}}..."></textarea></div>
+      <button type="submit" class="btn-wpp-submit" id="btn-wpp">
+        <span id="btn-wpp-text">Enviar pelo WhatsApp</span>
+        <span class="spinner" id="spin-wpp" style="border-color:rgba(255,255,255,.4);border-top-color:#fff"></span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- WHATSAPP TRIGGER -->
+<div class="wpp-float">
+  <button class="wpp-btn-trigger" onclick="toggleWpp()" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </button>
+</div>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+<script>
+// ---- GTM DataLayer ----
+window.dataLayer = window.dataLayer || [];
+
+// ====================================================================
+// CONFIG: defina aqui o webhook que vai receber os leads (n8n, Zapier, etc).
+// Enquanto WEBHOOK estiver vazio, os formulários enviam apenas pelo WhatsApp
+// e disparam evento dataLayer (GTM). Quando preencher a URL, os dados também
+// serão postados via JSON.
+// ====================================================================
+const WEBHOOK = '';
+const WHATSAPP_NUMBER = '{{WHATSAPP_FULL}}'; // {{CLIENT_NAME}}
+const REDIRECT_OBRIGADO = ''; // ex: 'https://{{CLIENT_DOMAIN}}/obrigado'
+
+// ---- UTM & TRACKING ----
+function getUTMs(){
+  const p = new URLSearchParams(window.location.search);
+  return {
+    utm_source:p.get('utm_source')||'',
+    utm_medium:p.get('utm_medium')||'',
+    utm_campaign:p.get('utm_campaign')||'',
+    utm_content:p.get('utm_content')||'',
+    utm_term:p.get('utm_term')||p.get('utm_keyword')||'',
+    gclid:p.get('gclid')||'',
+    fbclid:p.get('fbclid')||'',
+    page_url:window.location.href,
+    page_referer:document.referrer||''
+  };
+}
+function setCookie(k,v,days=30){
+  const exp=new Date(Date.now()+days*864e5).toUTCString();
+  document.cookie=`${k}=${encodeURIComponent(v)};expires=${exp};path=/;SameSite=Lax`;
+}
+function getCookie(k){
+  const m=document.cookie.match(new RegExp('(?:^|; )'+k+'=([^;]*)'));
+  return m?decodeURIComponent(m[1]):'';
+}
+function saveUTMsCookies(){
+  const u=getUTMs();
+  for(const[k,v]of Object.entries(u)) if(v) setCookie('rs_'+k,v);
+  return u;
+}
+function mergeUTMs(){
+  const url=getUTMs();
+  const merged={};
+  const keys=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','fbclid'];
+  for(const k of keys) merged[k]=url[k]||(getCookie('rs_'+k)||'');
+  merged.page_url=url.page_url;
+  merged.page_referer=url.page_referer;
+  return merged;
+}
+async function getIP(){try{const r=await fetch('https://api.ipify.org?format=json',{cache:'no-cache'});const d=await r.json();return d.ip||'';}catch{return '';}}
+saveUTMsCookies();
+
+// ---- PHONE MASK ----
+function applyPhoneMask(el){
+  el.addEventListener('input',function(){
+    let v=this.value.replace(/\D/g,'').slice(0,11);
+    if(v.length<=10) v=v.replace(/^(\d{2})(\d{4})(\d{0,4})$/,'($1) $2-$3');
+    else v=v.replace(/^(\d{2})(\d{5})(\d{0,4})$/,'($1) $2-$3');
+    this.value=v;
+  });
+}
+window.addEventListener('DOMContentLoaded',()=>{
+  ['f-tel','m-tel','w-tel'].forEach(id=>{const el=document.getElementById(id);if(el)applyPhoneMask(el);});
+  // Hamburger
+  const ham=document.getElementById('hamburgerBtn');
+  const nav=document.getElementById('mainNav');
+  if(ham){
+    ham.addEventListener('click',()=>{
+      const open=nav.classList.toggle('open');
+      ham.setAttribute('aria-expanded',open);
+    });
+    nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');ham.setAttribute('aria-expanded','false');}));
+  }
+});
+
+// ---- VALIDATIONS ----
+function validEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)}
+function validPhone(p){return p.replace(/\D/g,'').length>=10}
+function showErr(id,msg){const el=document.getElementById(id);if(el){el.textContent=msg;el.classList.add('show')}}
+function hideErr(id){const el=document.getElementById(id);if(el)el.classList.remove('show')}
+
+// ---- WEBHOOK ----
+async function sendWebhook(payload){
+  if(!WEBHOOK) return false;
+  const opts={method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)};
+  try{
+    const res=await fetch(WEBHOOK,opts);
+    if(!res.ok) console.warn('[{{CLIENT_SHORT_NAME}}] Webhook status:',res.status);
+    return true;
+  }catch(err){
+    try{await fetch(WEBHOOK,{...opts,keepalive:true});}catch(e2){console.warn('[{{CLIENT_SHORT_NAME}}] Webhook falhou:',e2);}
+    return false;
+  }
+}
+function saveLeadCookie(d){setCookie('rs_lead',JSON.stringify(d),30);}
+
+// ---- CALCULATOR ----
+function calcEconomia(){
+  const conta=parseFloat(document.getElementById('calc-conta').value);
+  if(!conta||conta<50){alert('Informe o valor médio da sua conta de luz (mínimo R$ 50).');return;}
+  const em=(conta*.95).toFixed(0);
+  const ea=(conta*.95*12).toFixed(0);
+  document.getElementById('cr-mensal').textContent='R$ '+Number(em).toLocaleString('pt-BR');
+  document.getElementById('cr-anual').textContent='R$ '+Number(ea).toLocaleString('pt-BR');
+  document.getElementById('cr-payback').textContent='Até 5 anos';
+  const box=document.getElementById('calcBox');
+  box.classList.add('show');
+  box.scrollIntoView({behavior:'smooth',block:'nearest'});
+  dataLayer.push({event:'calc_resultado',calc_conta:conta,calc_economia_mensal:em});
+}
+
+// ---- MODAL ----
+function abrirModalOrcamento(){
+  document.getElementById('modalOrcamento').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function fecharModal(){
+  document.getElementById('modalOrcamento').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('modalOrcamento').addEventListener('click',function(e){if(e.target===this)fecharModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')fecharModal();});
+
+async function submitModal(e){
+  e.preventDefault();
+  const nome=document.getElementById('m-nome').value;
+  const tel=document.getElementById('m-tel').value;
+  hideErr('m-tel-err');
+  if(!validPhone(tel)){showErr('m-tel-err','Informe um telefone válido com DDD.');return;}
+  const btn=document.getElementById('btn-modal');
+  btn.classList.add('loading');
+  document.getElementById('btn-modal-text').style.display='none';
+  document.getElementById('spin-modal').style.display='inline-block';
+  const ip=await getIP();
+  const utms=mergeUTMs();
+  const payload={
+    form_type:'modal_orcamento',pagina:'lp-{{CLIENT_SLUG}}',
+    nome,telefone:tel,ip,
+    conta_calc:document.getElementById('calc-conta').value||'',
+    cidade_calc:document.getElementById('calc-cidade').value||'',
+    ...utms,timestamp:new Date().toISOString()
+  };
+  saveLeadCookie(payload);
+  await sendWebhook(payload);
+  dataLayer.push({event:'lead_gerado',form_type:'modal',telefone:tel,...utms});
+  // Abrir WhatsApp também
+  const wppMsg=encodeURIComponent(
+    `Olá {{CLIENT_NAME}}!\n\n`+
+    `Vim pelo site e quero meu orçamento solar exato.\n\n`+
+    `*Nome:* ${nome}\n`+
+    `*Telefone:* ${tel}\n`+
+    (payload.cidade_calc?`*Cidade:* ${payload.cidade_calc}\n`:'')+
+    (payload.conta_calc?`*Conta de luz:* R$ ${payload.conta_calc}`:'')
+  );
+  if(REDIRECT_OBRIGADO){window.location.href=REDIRECT_OBRIGADO;}
+  else{window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${wppMsg}`,'_blank');fecharModal();btn.classList.remove('loading');document.getElementById('btn-modal-text').style.display='';document.getElementById('spin-modal').style.display='none';document.getElementById('modalForm').reset();}
+}
+
+// ---- LEAD FORM ----
+async function submitLeadForm(e){
+  e.preventDefault();
+  const nome=document.getElementById('f-nome').value;
+  const tel=document.getElementById('f-tel').value;
+  const cidade=document.getElementById('f-cidade').value;
+  const conta=document.getElementById('f-conta').value;
+  const segmento=document.getElementById('f-segmento').value;
+  if(!validPhone(tel)){alert('Informe um telefone válido com DDD.');return;}
+  const btn=document.getElementById('btn-main-submit');
+  btn.classList.add('loading');
+  document.getElementById('btn-main-text').style.display='none';
+  document.getElementById('spin-main').style.display='inline-block';
+  const ip=await getIP();
+  const utms=mergeUTMs();
+  const payload={
+    form_type:'lead_principal',pagina:'lp-{{CLIENT_SLUG}}',
+    nome,telefone:tel,cidade,conta_mensal:conta,segmento,ip,
+    ...utms,timestamp:new Date().toISOString()
+  };
+  saveLeadCookie(payload);
+  await sendWebhook(payload);
+  dataLayer.push({event:'lead_gerado',form_type:'principal',telefone:tel,...utms});
+  // Abrir WhatsApp com a mensagem
+  const wppMsg=encodeURIComponent(
+    `Olá {{CLIENT_NAME}}!\n\n`+
+    `Vim pelo site e quero meu orçamento solar.\n\n`+
+    `*Nome:* ${nome}\n`+
+    `*Telefone:* ${tel}\n`+
+    `*Cidade:* ${cidade}\n`+
+    `*Conta de luz:* R$ ${conta}\n`+
+    (segmento?`*Segmento:* ${segmento}`:'')
+  );
+  if(REDIRECT_OBRIGADO){window.location.href=REDIRECT_OBRIGADO;}
+  else{window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${wppMsg}`,'_blank');btn.classList.remove('loading');document.getElementById('btn-main-text').style.display='';document.getElementById('spin-main').style.display='none';document.getElementById('leadFormMain').reset();}
+}
+
+// ---- WHATSAPP PANEL ----
+function toggleWpp(){
+  const panel=document.getElementById('wppPanel');
+  panel.classList.toggle('open');
+}
+
+async function submitWpp(e){
+  e.preventDefault();
+  const nome=document.getElementById('w-nome').value;
+  const tel=document.getElementById('w-tel').value;
+  const email=document.getElementById('w-email').value;
+  const msg=document.getElementById('w-msg').value;
+  if(!validPhone(tel)){alert('Informe um telefone válido com DDD.');return;}
+  if(!validEmail(email)){alert('Informe um e-mail válido.');return;}
+  const btn=document.getElementById('btn-wpp');
+  btn.classList.add('loading');
+  document.getElementById('btn-wpp-text').style.display='none';
+  document.getElementById('spin-wpp').style.display='inline-block';
+  const ip=await getIP();
+  const utms=mergeUTMs();
+  const payload={
+    form_type:'whatsapp_panel',pagina:'lp-{{CLIENT_SLUG}}',
+    nome,telefone:tel,email,mensagem:msg,ip,
+    ...utms,timestamp:new Date().toISOString()
+  };
+  saveLeadCookie(payload);
+  await sendWebhook(payload);
+  dataLayer.push({event:'lead_gerado',form_type:'whatsapp',email,telefone:tel,...utms});
+  const wppMsg=encodeURIComponent(
+    `Olá {{CLIENT_NAME}}!\n\n`+
+    `*Nome:* ${nome}\n`+
+    `*Telefone:* ${tel}\n`+
+    `*E-mail:* ${email}\n`+
+    (msg?`*Mensagem:* ${msg}`:`Vim pelo site e gostaria de um orçamento de energia solar.`)
+  );
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${wppMsg}`,'_blank');
+  document.getElementById('wppPanel').classList.remove('open');
+  document.getElementById('wppForm').reset();
+  btn.classList.remove('loading');
+  document.getElementById('btn-wpp-text').style.display='';
+  document.getElementById('spin-wpp').style.display='none';
+}
+
+// ---- FAQ ----
+function faqToggle(btn){
+  const a=btn.nextElementSibling;
+  const open=btn.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(b=>{b.classList.remove('open');b.setAttribute('aria-expanded','false');b.nextElementSibling.classList.remove('open');});
+  if(!open){btn.classList.add('open');btn.setAttribute('aria-expanded','true');a.classList.add('open');}
+}
+
+// ---- STICKY HEADER ----
+window.addEventListener('scroll',()=>{
+  document.querySelector('.header').style.boxShadow=window.scrollY>50?'0 4px 24px rgba(7,43,105,.13)':'0 1px 4px rgba(0,0,0,.08)';
+});
+
+// ---- PROJECTS CAROUSEL ----
+const PROJECTS=['img/1.png','img/2.png','img/3.png','img/4.png'];
+let projIdx=0;
+function shiftProjects(dir){
+  projIdx=(projIdx+dir+PROJECTS.length)%PROJECTS.length;
+  for(let i=0;i<3;i++){
+    const card=document.getElementById('proj-card-'+i);
+    const img=document.getElementById('proj-img-'+i);
+    if(!card||!img)continue;
+    card.classList.add('fading');
+    setTimeout(()=>{
+      img.src=PROJECTS[(projIdx+i)%PROJECTS.length];
+      card.classList.remove('fading');
+    },180);
+  }
+}
+function nextProjects(){shiftProjects(1);}
+function prevProjects(){shiftProjects(-1);}
+</script>
+</body>
+</html>
