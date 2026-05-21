@@ -43,7 +43,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <style>
 .material-icons{font-size:1em;vertical-align:-0.125em;line-height:1;display:inline-block}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 :root{
   /* === Sistema de cores — paleta do cliente ===
      Substitua HEX e RGB. Mantenha HEX e RGB do mesmo valor sincronizados.
@@ -121,7 +121,9 @@ h1,h2,h3,h4{font-family:'Montserrat',sans-serif;line-height:1.15;font-weight:800
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(233,206,16,.14);border:1px solid rgba(233,206,16,.4);border-radius:50px;padding:6px 16px;font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--gold-light);text-transform:uppercase;margin-bottom:22px}
 .hero-badge .pulse{width:8px;height:8px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(233,206,16,.7)}70%{box-shadow:0 0 0 10px rgba(233,206,16,0)}100%{box-shadow:0 0 0 0 rgba(233,206,16,0)}}
-.hero h1{font-size:clamp(40px,5.8vw,68px);color:var(--white);margin-bottom:20px;max-width:760px;font-weight:800}
+.hero h1{font-size:clamp(28px,5.8vw,68px);color:var(--white);margin-bottom:20px;max-width:760px;font-weight:800;line-height:1.15;overflow-wrap:break-word;word-wrap:break-word;hyphens:auto}
+.hero-sub{overflow-wrap:break-word}
+.hero-badge{flex-wrap:wrap}
 .hero h1 .hl-gold{color:var(--gold)}
 .hero-sub{font-size:18px;color:rgba(255,255,255,.78);max-width:600px;margin-bottom:32px;line-height:1.65;font-weight:500}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
@@ -239,17 +241,17 @@ section{padding:84px 0}
 .diff-card p{font-size:14px;color:var(--gray-600);line-height:1.6;font-weight:500}
 
 /* REVIEWS */
-.rev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:980px;margin:0 auto}
+.rev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;max-width:1040px;margin:0 auto}
 @media(max-width:768px){.rev-grid{grid-template-columns:1fr}}
-.rev-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:28px;box-shadow:var(--sh-sm);position:relative;transition:box-shadow var(--t)}
+.rev-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:36px 30px 28px;box-shadow:var(--sh-sm);position:relative;transition:box-shadow var(--t);text-align:center;display:flex;flex-direction:column;align-items:center}
 .rev-card:hover{box-shadow:var(--sh-md)}
-.rev-card::before{content:'"';font-family:Georgia,serif;font-size:74px;color:rgba(7,43,105,.08);position:absolute;top:8px;right:18px;line-height:1}
-.rev-stars{color:#F59E0B;font-size:18px;margin-bottom:12px;letter-spacing:2px}
-.rev-text{font-size:14.5px;color:var(--gray-600);margin-bottom:18px;line-height:1.7;font-style:italic;font-weight:500}
-.rev-author{display:flex;align-items:center;gap:11px}
-.rev-av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-card));display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:var(--white);flex-shrink:0}
-.rev-name{font-weight:800;font-size:15px;color:var(--navy)}
-.rev-loc{font-size:12px;color:var(--gray-400)}
+.rev-card::before{content:'"';font-family:Georgia,serif;font-size:64px;color:rgba(7,43,105,.08);position:absolute;top:6px;left:22px;line-height:1}
+.rev-photo{width:78px;height:78px;border-radius:50%;overflow:hidden;margin-bottom:14px;border:3px solid var(--gold);flex-shrink:0}
+.rev-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.rev-stars{color:#F59E0B;font-size:18px;margin-bottom:14px;letter-spacing:2px}
+.rev-text{font-size:17px;color:var(--text);margin-bottom:18px;line-height:1.65;font-weight:500}
+.rev-name{font-weight:800;font-size:17px;color:var(--navy);margin-top:4px}
+.rev-loc{font-size:13px;color:var(--gray-500);margin-top:2px}
 .gmb-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--r-pill);padding:9px 18px;font-size:14px;font-weight:600;color:var(--gray-800);margin-bottom:36px}
 
 /* FAQ */
@@ -294,27 +296,6 @@ section{padding:84px 0}
 .city-tag{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-pill);padding:8px 16px;font-size:14px;font-weight:600;color:rgba(255,255,255,.78);transition:all var(--t);display:inline-flex;align-items:center;gap:5px}
 .city-tag:hover{background:rgba(233,206,16,.16);border-color:rgba(233,206,16,.5);color:var(--gold-light)}
 
-/* PROJECTS GALLERY */
-.projects-wrap{position:relative;max-width:1080px;margin:0 auto}
-.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-@media(max-width:768px){.projects-grid{grid-template-columns:repeat(2,1fr);gap:16px}}
-@media(max-width:480px){.projects-grid{grid-template-columns:1fr}}
-.proj-card{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-md);position:relative;aspect-ratio:1/1;cursor:pointer;transition:transform var(--t),box-shadow var(--t);background:var(--gray-100)}
-.proj-card img{transition:opacity .35s ease,transform .6s}
-.proj-card.fading img{opacity:0}
-.proj-arrow{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;background:var(--white);border:1px solid var(--gray-200);box-shadow:var(--sh-md);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;color:var(--navy);transition:all var(--t)}
-.proj-arrow:hover{background:var(--navy);color:var(--white);box-shadow:0 0 14px 3px var(--navy-glow),var(--sh-lg);transform:translateY(-50%) scale(1.08)}
-.proj-arrow.prev{left:-24px}
-.proj-arrow.next{right:-24px}
-.proj-arrow .material-icons{font-size:28px}
-@media(max-width:560px){.proj-arrow{width:42px;height:42px}.proj-arrow.prev{left:-6px}.proj-arrow.next{right:-6px}.proj-arrow .material-icons{font-size:24px}}
-.proj-card:hover{transform:translateY(-5px);box-shadow:0 0 14px 3px var(--navy-glow),var(--sh-lg)}
-.proj-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
-.proj-card:hover img{transform:scale(1.08)}
-.proj-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,43,105,.92) 100%);display:flex;align-items:flex-end;padding:18px;color:white;font-weight:700;opacity:0;transition:opacity var(--t)}
-.proj-card:hover .proj-overlay{opacity:1}
-.proj-overlay .material-icons{margin-right:6px;color:var(--gold)}
-.proj-overlay span{font-size:14px;display:flex;align-items:center}
 /* PARTNERS BAR */
 .partners{padding:54px 0;background:var(--gray-50);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)}
 .partners-title{text-align:center;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gray-600);margin-bottom:28px}
@@ -347,24 +328,20 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 
 /* WPP FLOAT */
 .wpp-float{position:fixed;bottom:26px;right:26px;z-index:5000}
-.wpp-panel{position:fixed;bottom:100px;right:26px;z-index:4999;width:330px;background:var(--white);border-radius:var(--r-lg);box-shadow:0 16px 60px rgba(0,0,0,.3);display:none;overflow:hidden;animation:fd .3s ease}
-.wpp-panel.open{display:block}
-.wpp-panel-head{background:#25D366;padding:16px 20px;display:flex;align-items:center;justify-content:space-between}
-.wpp-panel-head span{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;color:var(--white);display:flex;align-items:center;gap:8px}
-.wpp-panel-close{background:rgba(255,255,255,.2);border:none;border-radius:50%;width:28px;height:28px;cursor:pointer;font-size:16px;color:var(--white);display:flex;align-items:center;justify-content:center}
-.wpp-panel-body{padding:20px}
-.wpp-panel-body .fg{margin-bottom:11px}
-.wpp-panel-body .fg label{color:var(--gray-600);font-size:12px}
-.wpp-panel-body .fg input,.wpp-panel-body .fg textarea{width:100%;padding:11px 13px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:8px;color:var(--text);font-family:'Montserrat',sans-serif;font-size:14px;transition:border-color var(--t);font-weight:500}
-.wpp-panel-body .fg input:focus,.wpp-panel-body .fg textarea:focus{outline:none;border-color:#25D366}
-.wpp-panel-body .fg textarea{height:74px;resize:none}
-.btn-wpp-submit{width:100%;padding:14px;background:#25D366;color:var(--white);font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;border:none;border-radius:var(--r-pill);cursor:pointer;transition:all var(--t);display:flex;align-items:center;justify-content:center;gap:8px}
-.btn-wpp-submit:hover{background:#1DAA56;transform:translateY(-1px)}
-.btn-wpp-submit.loading{opacity:.7;pointer-events:none}
-.wpp-btn-trigger{width:62px;height:62px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);cursor:pointer;border:none;animation:wppP 3s infinite;transition:transform var(--t)}
-.wpp-btn-trigger:hover{transform:scale(1.1)}
-.wpp-btn-trigger svg{width:32px;height:32px;fill:white}
-@keyframes wppP{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.45)}50%{box-shadow:0 4px 30px rgba(37,211,102,.7),0 0 0 10px rgba(37,211,102,.12)}}
+.wpp-btn-trigger{width:62px;height:62px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);cursor:pointer;border:none;transition:transform var(--t);text-decoration:none;position:relative;animation:wppPulseBtn 1.8s ease-in-out infinite}
+.wpp-btn-trigger::before,.wpp-btn-trigger::after{content:'';position:absolute;inset:0;border-radius:50%;background:#25D366;z-index:-1;animation:wppRing 2s cubic-bezier(.25,.46,.45,.94) infinite;opacity:0}
+.wpp-btn-trigger::after{animation-delay:1s}
+.wpp-btn-trigger:hover{transform:scale(1.1);animation-play-state:paused}
+.wpp-btn-trigger svg{width:32px;height:32px;fill:white;position:relative;z-index:1}
+@keyframes wppRing{0%{transform:scale(1);opacity:.55}80%{opacity:0}100%{transform:scale(2);opacity:0}}
+@keyframes wppPulseBtn{0%,100%{transform:scale(1);box-shadow:0 4px 20px rgba(37,211,102,.45)}50%{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.75)}}
+/* WhatsApp CTA por seção - só desktop */
+.btn-wpp{background:#25D366;color:#fff;border:none;padding:14px 28px;border-radius:var(--r-pill);font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;gap:9px;text-decoration:none;transition:all var(--t);box-shadow:0 4px 14px rgba(37,211,102,.35)}
+.btn-wpp:hover{background:#1DAA56;transform:translateY(-2px);box-shadow:0 8px 22px rgba(37,211,102,.5)}
+.btn-wpp svg{width:20px;height:20px;fill:#fff;flex-shrink:0}
+.mobile-wpp{display:none}
+@media(max-width:768px){.mobile-wpp{display:inline-flex}}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center;margin-top:42px}
 
 /* HAMBURGER + MOBILE NAV */
 .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--navy)}
@@ -381,19 +358,43 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 }
 @media(max-width:768px){
   section{padding:60px 0}
-  .hero{min-height:540px}
-  .hero-content{padding:64px 0}
-  .hero-stats{gap:20px}
+  .hero{min-height:auto}
+  .hero-content{padding:42px 0 52px}
+  .hero h1{font-size:30px;line-height:1.2;margin-bottom:14px;max-width:100%}
+  .hero-sub{font-size:15px;margin-bottom:22px;line-height:1.6;max-width:100%}
+  .hero-badge{font-size:11px;padding:5px 12px;margin-bottom:16px;letter-spacing:1px}
+  .hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 18px;margin-top:30px;padding-top:22px}
+  .hero-stats > div{text-align:left}
+  .hero-stats .hs-num{font-size:24px}
+  .hero-stats .hs-label{font-size:12px}
   .calc-wrap{padding:28px 18px}
   .lead-form{padding:26px 18px}
   .topbar{font-size:12px}
-  .tb-side{gap:14px}
+  .tb-side{gap:12px}
+  .topbar .tb-item-hide-mob{display:none}
+  .header .logo-wrap img{height:42px;width:auto}
+  .header-inner{padding:10px 0;gap:8px}
+  .header .header-inner > div .btn-gold{display:none}
+  .container{padding:0 18px}
 }
 @media(max-width:560px){
   .trust-bar .container{gap:14px}
   .trust-item{font-size:14px}
-  .hero-actions .btn{width:100%;justify-content:center}
+  .hero-actions{flex-direction:column;gap:10px;width:100%}
+  .hero-actions .btn{width:100%;justify-content:center;white-space:normal;text-align:center}
+  .hero h1{font-size:27px}
+  .hero-sub{font-size:14.5px}
+  .hero-content{padding:32px 0 42px}
   .lead-sec{padding:60px 0}
+  .topbar .tb-item-hide-mob-sm{display:none}
+  .topbar .container{justify-content:center}
+}
+@media(max-width:380px){
+  .hero h1{font-size:24px}
+  .hero-sub{font-size:13.5px}
+  .header .logo-wrap img{height:36px}
+  .hero-stats .hs-num{font-size:22px}
+  .container{padding:0 16px}
 }
 </style>
 </head>
@@ -403,12 +404,12 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 <div class="topbar">
   <div class="container">
     <div class="tb-side">
-      <div class="tb-item"><span class="material-icons" aria-hidden="true">location_on</span> <span>Rio de Janeiro · Rio de Janeiro e Grande Rio</span></div>
+      <div class="tb-item tb-item-hide-mob-sm"><span class="material-icons" aria-hidden="true">location_on</span> <span>Rio de Janeiro · Grande Rio</span></div>
     </div>
     <div class="tb-side">
-      <div class="tb-item"><span class="material-icons" aria-hidden="true">phone</span> <a href="tel:+552124344001">(21) 2434-4001</a></div>
-      <div class="tb-item"><a href="https://www.instagram.com/braynersolar/" target="_blank" rel="noopener">Instagram</a></div>
-      <div class="tb-item"><a href="https://www.facebook.com/BraynerSolar.com.br/" target="_blank" rel="noopener">Facebook</a></div>
+      <div class="tb-item"><span class="material-icons" aria-hidden="true">chat</span> <a href="https://wa.me/552124344001?text=Ol%C3%A1!%20Vim%20pelo%20Google%20e%20gostaria%20de%20um%20or%C3%A7amento%20de%20energia%20solar." target="_blank" rel="noopener">Fale no WhatsApp</a></div>
+      <div class="tb-item tb-item-hide-mob"><a href="https://www.instagram.com/braynersolar/" target="_blank" rel="noopener">Instagram</a></div>
+      <div class="tb-item tb-item-hide-mob"><a href="https://www.facebook.com/BraynerSolar.com.br/" target="_blank" rel="noopener">Facebook</a></div>
     </div>
   </div>
 </div>
@@ -533,6 +534,9 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
       <div class="step-card"><div class="step-num">03</div><span class="step-icon"><span class="material-icons" aria-hidden="true">build</span></span><h3>Instalação Profissional</h3><p>Equipe técnica qualificada com equipamentos de alto padrão. Seguro, limpo e no prazo.</p></div>
       <div class="step-card"><div class="step-num">04</div><span class="step-icon"><span class="material-icons" aria-hidden="true">check_circle</span></span><h3>Homologação e Economia</h3><p>Cuidamos de toda a burocracia junto à concessionária local. Você só economiza desde o 1º mês.</p></div>
     </div>
+    <div class="cta-row">
+      <a href="https://wa.me/552124344001?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20de%20energia%20solar." target="_blank" rel="noopener" class="btn-wpp mobile-wpp" onclick="trackWppClick()"><span class="material-icons" aria-hidden="true">chat</span> Falar no WhatsApp</a>
+    </div>
   </div>
 </section>
 
@@ -547,7 +551,7 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
     <div class="sys-grid">
       <article class="sys-card">
         <div class="sys-img">
-          <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=800&q=80" alt="Energia solar residencial em Rio de Janeiro" loading="lazy">
+          <img src="img/casa-residencial.jpg" alt="Placas solares instaladas em telhado de casa residencial no Rio de Janeiro" loading="lazy">
           <div class="sys-badge" style="background:var(--gold);color:var(--navy)">Residencial</div>
         </div>
         <div class="sys-body"><h3>Para sua Casa</h3><p>Reduza até 95% da conta e valorize seu imóvel com energia limpa e renovável.</p>
@@ -569,6 +573,9 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
         <div class="sys-body"><h3>Para o Agronegócio</h3><p>Energia para irrigação, ordenha, secadores e toda a operação rural com retorno garantido.</p>
         <ul class="sys-bul"><li>Financiamento facilitado</li><li>Reduz custo de produção</li><li>Sistema robusto e durável</li><li>Manutenção mínima</li></ul></div>
       </article>
+    </div>
+    <div class="cta-row">
+      <a href="https://wa.me/552124344001?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20de%20energia%20solar." target="_blank" rel="noopener" class="btn-wpp mobile-wpp" onclick="trackWppClick()"><span class="material-icons" aria-hidden="true">chat</span> Falar no WhatsApp</a>
     </div>
   </div>
 </section>
@@ -608,7 +615,7 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
         </div>
         <p style="color:rgba(255,255,255,.45);font-size:12px;margin-top:14px;text-align:center">*Estimativa com 95% de eficiência. Solicite orçamento exato gratuitamente.</p>
         <div style="text-align:center;margin-top:20px">
-          <button onclick="abrirModalOrcamento()" class="btn btn-gold" style="font-size:17px"><span class="material-icons" aria-hidden="true">wb_sunny</span> Quero Orçamento Exato Grátis</button>
+          <a href="https://wa.me/552124344001?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20de%20energia%20solar." target="_blank" rel="noopener" class="btn-wpp mobile-wpp" onclick="trackWppClick()" style="font-size:17px;padding:14px 28px"><span class="material-icons" aria-hidden="true">chat</span> Falar no WhatsApp</a>
         </div>
       </div>
     </div>
@@ -631,41 +638,11 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
       <div class="diff-card"><span class="diff-icon"><span class="material-icons" aria-hidden="true">trending_up</span></span><h3>Valorize seu Imóvel</h3><p>Imóveis com energia solar têm valorização e linhas de crédito ampliadas com juros menores.</p></div>
       <div class="diff-card"><span class="diff-icon"><span class="material-icons" aria-hidden="true">handshake</span></span><h3>Atendimento dedicado</h3><p>Da visita técnica ao pós-venda, acompanhamos cada projeto com equipe dedicada.</p></div>
     </div>
-  </div>
-</section>
-
-<!-- PROJETOS -->
-<section id="projetos" aria-labelledby="h2-proj">
-  <div class="container">
-    <div class="stc">
-      <span class="sec-label">Cases reais</span>
-      <h2 id="h2-proj">Veja Alguns dos Nossos Projetos</h2>
-      <p>+4.000 instalações realizadas em residências, empresas e fazendas no Rio de Janeiro e Grande Rio. Cada projeto entregue com qualidade de ponta a ponta.</p>
-    </div>
-    <div class="projects-wrap">
-      <button class="proj-arrow prev" onclick="prevProjects()" aria-label="Fotos anteriores" type="button"><span class="material-icons">chevron_left</span></button>
-      <div class="projects-grid" id="projGrid">
-        <div class="proj-card" id="proj-card-0">
-          <img id="proj-img-0" src="img/1.png" alt="Projeto de energia solar Brayner" loading="lazy">
-          <div class="proj-overlay"><span><span class="material-icons" aria-hidden="true">wb_sunny</span> Projeto Brayner</span></div>
-        </div>
-        <div class="proj-card" id="proj-card-1">
-          <img id="proj-img-1" src="img/2.png" alt="Projeto de energia solar Brayner" loading="lazy">
-          <div class="proj-overlay"><span><span class="material-icons" aria-hidden="true">wb_sunny</span> Projeto Brayner</span></div>
-        </div>
-        <div class="proj-card" id="proj-card-2">
-          <img id="proj-img-2" src="img/3.png" alt="Projeto de energia solar Brayner" loading="lazy">
-          <div class="proj-overlay"><span><span class="material-icons" aria-hidden="true">wb_sunny</span> Projeto Brayner</span></div>
-        </div>
-      </div>
-      <button class="proj-arrow next" onclick="nextProjects()" aria-label="Próximas fotos" type="button"><span class="material-icons">chevron_right</span></button>
-    </div>
-    <div style="text-align:center;margin-top:42px">
-      <a href="#orcamento" class="btn btn-gold"><span class="material-icons" aria-hidden="true">wb_sunny</span> Quero Meu Projeto</a>
+    <div class="cta-row">
+      <a href="https://wa.me/552124344001?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20de%20energia%20solar." target="_blank" rel="noopener" class="btn-wpp mobile-wpp" onclick="trackWppClick()"><span class="material-icons" aria-hidden="true">chat</span> Falar no WhatsApp</a>
     </div>
   </div>
 </section>
-
 
 <!-- REVIEWS -->
 <section id="depoimentos" aria-labelledby="h2-rev">
@@ -680,13 +657,38 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
         <strong>4,9 / 5,0</strong> · +4.000 instalações realizadas em Rio de Janeiro e Grande Rio
       </div>
     </div>
-    <!-- TODO: SUBSTITUIR POR REVIEWS REAIS DO CLIENTE.
-         Mantenha 4 cards. Estrutura: avatar (2 letras), nome completo, localização. -->
     <div class="rev-grid">
-      <div class="rev-card"><div class="rev-stars" aria-label="5 estrelas">★★★★★</div><p class="rev-text">"Gostei bastante do atendimento, o pessoal é muito profissional e trabalham com equipamentos de qualidade, a instalação ficou impecável!!!"</p><div class="rev-author"><div class="rev-av">CA</div><div><div class="rev-name">Cliente A</div><div class="rev-loc">Rio de Janeiro · RJ</div></div></div></div>
-      <div class="rev-card"><div class="rev-stars" aria-label="5 estrelas">★★★★★</div><p class="rev-text">"O atendimento é excelente. A venda ocorre de forma transparente e é muito importante para a tomada de decisão. O acompanhamento de todo o processo é feito por uma equipe muito profissional e o pós-venda é o diferencial. Empresa de confiança!"</p><div class="rev-author"><div class="rev-av">CB</div><div><div class="rev-name">Cliente B</div><div class="rev-loc">Rio de Janeiro · RJ</div></div></div></div>
-      <div class="rev-card"><div class="rev-stars" aria-label="5 estrelas">★★★★★</div><p class="rev-text">"Ótimo atendimento, preço e suporte. Super recomendo!"</p><div class="rev-author"><div class="rev-av">CC</div><div><div class="rev-name">Cliente C</div><div class="rev-loc">Rio de Janeiro · RJ</div></div></div></div>
-      <div class="rev-card"><div class="rev-stars" aria-label="5 estrelas">★★★★★</div><p class="rev-text">"Excelência em atendimento, profissionais qualificados e agilidade em prestação do serviço."</p><div class="rev-author"><div class="rev-av">CD</div><div><div class="rev-name">Cliente D</div><div class="rev-loc">Rio de Janeiro · RJ</div></div></div></div>
+      <div class="rev-card">
+        <div class="rev-photo"><img src="assets/dep/rafael.jpg" alt="Instalação do cliente Rafael Terrigno"></div>
+        <div class="rev-stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="rev-text">A conta de luz caiu de R$ 600 pra R$ 200 logo no primeiro mês. Agora posso usar ar-condicionado o tempo todo sem peso na consciência. Atendimento de ponta a ponta.</p>
+        <div class="rev-name">Rafael Terrigno</div>
+        <div class="rev-loc">Cliente residencial · Rio de Janeiro · RJ</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-photo"><img src="assets/dep/carlos.jpg" alt="Instalação comercial do Carlos Parente"></div>
+        <div class="rev-stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="rev-text">Cuidaram do projeto e da instalação em 5 das minhas lojas, inclusive a homologação na concessionária. Vejo a economia bater todo mês — super recomendo.</p>
+        <div class="rev-name">Carlos Parente</div>
+        <div class="rev-loc">5 lojas comerciais · Rio de Janeiro · RJ</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-photo"><img src="assets/dep/marcos.jpg" alt="Instalação residencial do Marcos Antonio Bonze"></div>
+        <div class="rev-stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="rev-text">Equipe eficiente do início ao fim. Cumpriram o prazo combinado, instalação impecável e um pós-venda que acompanha cada etapa.</p>
+        <div class="rev-name">Marcos Antonio Bonze</div>
+        <div class="rev-loc">Cliente residencial · Rio de Janeiro · RJ</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-photo"><img src="assets/dep/claudia.jpg" alt="Instalação residencial da Claudia na Região dos Lagos"></div>
+        <div class="rev-stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="rev-text">Tinha sido enganada por outra empresa e fiquei com placas paradas em casa. A Brayner resolveu tudo com rapidez e atenção — a melhor escolha aqui na Região dos Lagos.</p>
+        <div class="rev-name">Claudia</div>
+        <div class="rev-loc">Cliente residencial · Região dos Lagos · RJ</div>
+      </div>
+    </div>
+    <div class="cta-row">
+      <a href="https://wa.me/552124344001?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20de%20energia%20solar." target="_blank" rel="noopener" class="btn-wpp mobile-wpp" onclick="trackWppClick()"><span class="material-icons" aria-hidden="true">chat</span> Falar no WhatsApp</a>
     </div>
   </div>
 </section>
@@ -740,6 +742,9 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
       <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)" aria-expanded="false"><span class="faq-qt">Posso financiar o sistema solar?</span><span class="faq-ch">▼</span></button><div class="faq-a">Sim. Linhas de financiamento que trabalhamos: <strong>Santander, BV, Sol Fácil, Sol Agora, BTG, Bel Credit, antecipação de FGTS e empréstimo consignado</strong>. Em muitos casos a parcela do financiamento é menor que a economia gerada na conta de luz, ou seja, você financia o sistema com o próprio dinheiro que pagaria à concessionária.</div></div>
       <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)" aria-expanded="false"><span class="faq-qt">A Brayner atende minha cidade?</span><span class="faq-ch">▼</span></button><div class="faq-a">Atendemos Rio de Janeiro e Grande Rio com base em Rio de Janeiro (RJ). Solicite orçamento e confirmamos o atendimento na sua localização.</div></div>
     </div>
+    <div class="cta-row">
+      <a href="https://wa.me/552124344001?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20de%20energia%20solar." target="_blank" rel="noopener" class="btn-wpp mobile-wpp" onclick="trackWppClick()"><span class="material-icons" aria-hidden="true">chat</span> Falar no WhatsApp</a>
+    </div>
   </div>
 </section>
 
@@ -748,21 +753,17 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
   <div class="container">
     <div class="stc stc-dark">
       <span class="sec-label" style="color:var(--gold)">Área de atuação</span>
-      <h2 id="h2-cid">Atendemos +100 Cidades em Minas Gerais</h2>
-      <p>Energia solar instalada por especialistas em toda a Rio de Janeiro e Grande Rio.</p>
+      <h2 id="h2-cid">Atendemos o Rio de Janeiro e Grande Rio</h2>
+      <p>Energia solar instalada por especialistas em todo o Estado do Rio de Janeiro.</p>
     </div>
-    <!-- TODO: SUBSTITUIR PELA LISTA REAL DE CIDADES ATENDIDAS PELO CLIENTE.
-         Sugerimos 12-18 cidades + 1 tag final "e mais X+ cidades". -->
     <div class="city-grid">
-      <span class="city-tag"><span class="material-icons" aria-hidden="true">location_on</span> Rio de Janeiro</span>
-      <span class="city-tag"><span class="material-icons" aria-hidden="true">location_on</span> Cidade 2</span>
-      <span class="city-tag"><span class="material-icons" aria-hidden="true">location_on</span> Cidade 3</span>
-      <span class="city-tag"><span class="material-icons" aria-hidden="true">location_on</span> Cidade 4</span>
-      <span class="city-tag"><span class="material-icons" aria-hidden="true">location_on</span> Cidade 5</span>
-      <span class="city-tag"><span class="material-icons" aria-hidden="true">location_on</span> e toda a Rio de Janeiro e Grande Rio</span>
+      <span class="city-tag"><span class="material-icons" aria-hidden="true">location_on</span> Capital e Região Metropolitana</span>
+      <span class="city-tag"><span class="material-icons" aria-hidden="true">location_on</span> Baixada Fluminense</span>
+      <span class="city-tag"><span class="material-icons" aria-hidden="true">location_on</span> Região dos Lagos</span>
+      <span class="city-tag"><span class="material-icons" aria-hidden="true">location_on</span> Costa Verde</span>
     </div>
     <div style="text-align:center;margin-top:42px">
-      <a href="#orcamento" class="btn btn-gold"><span class="material-icons" aria-hidden="true">wb_sunny</span> Faça um orçamento</a>
+      <a href="https://wa.me/552124344001?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20de%20energia%20solar." target="_blank" rel="noopener" class="btn-wpp mobile-wpp" onclick="trackWppClick()"><span class="material-icons" aria-hidden="true">chat</span> Falar no WhatsApp</a>
     </div>
   </div>
 </section>
@@ -778,17 +779,14 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
           <a href="https://www.instagram.com/braynersolar/" target="_blank" rel="noopener" class="soc-a" aria-label="Instagram"><span class="material-icons" aria-hidden="true">photo_camera</span></a>
           <a href="https://www.facebook.com/BraynerSolar.com.br/" target="_blank" rel="noopener" class="soc-a" aria-label="Facebook"><span class="material-icons" aria-hidden="true">thumb_up</span></a>
           <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="soc-a" aria-label="LinkedIn"><span class="material-icons" aria-hidden="true">work</span></a>
-          <a href="javascript:toggleWpp()" class="soc-a" aria-label="WhatsApp"><span class="material-icons" aria-hidden="true">chat</span></a>
+          <a href="https://wa.me/552124344001?text=Ol%C3%A1!%20Vim%20pelo%20Google%20e%20gostaria%20de%20um%20or%C3%A7amento%20de%20energia%20solar." target="_blank" rel="noopener" class="soc-a" aria-label="WhatsApp"><span class="material-icons" aria-hidden="true">chat</span></a>
         </div>
       </div>
       <div class="ft-col"><h4>Soluções</h4><ul class="ft-links"><li><a href="#segmentos">Residencial</a></li><li><a href="#segmentos">Empresarial</a></li><li><a href="#segmentos">Fazenda / Rural</a></li><li><a href="#calculadora">Calculadora</a></li><li><a href="#orcamento">Orçamento Grátis</a></li></ul></div>
       <div class="ft-col"><h4>Institucional</h4><ul class="ft-links"><li><a href="#sobre">Sobre</a></li><li><a href="#diferenciais">Diferenciais</a></li><li><a href="#depoimentos">Clientes</a></li><li><a href="#faq">FAQ</a></li><li><a href="https://braynersolar.com.br/contato/" target="_blank" rel="noopener">Contato</a></li></ul></div>
       <div class="ft-col"><h4>Contato</h4>
-        <div class="ft-ci"><span class="ft-ci-icon"><span class="material-icons" aria-hidden="true">location_on</span></span><div class="ft-ci-text"><strong style="color:rgba(255,255,255,.85)">Rio de Janeiro · RJ</strong><br><a href="tel:+552124344001">(21) 2434-4001</a></div></div>
-        <!-- TODO: se o cliente tiver mais unidades, duplique o bloco abaixo.
-        <div class="ft-ci"><span class="ft-ci-icon"><span class="material-icons" aria-hidden="true">location_on</span></span><div class="ft-ci-text"><strong style="color:rgba(255,255,255,.85)">CIDADE2 · UF</strong><br><a href="tel:+55DDDXXXXXXXX">(DDD) XXXX-XXXX</a></div></div>
-        -->
-        <div class="ft-ci"><span class="ft-ci-icon"><span class="material-icons" aria-hidden="true">chat</span></span><div class="ft-ci-text"><a href="https://wa.me/552124344001" target="_blank" rel="noopener">WhatsApp Direto</a></div></div>
+        <div class="ft-ci"><span class="ft-ci-icon"><span class="material-icons" aria-hidden="true">location_on</span></span><div class="ft-ci-text"><strong style="color:rgba(255,255,255,.85)">Rio de Janeiro · RJ</strong><br><span style="font-size:13px;color:rgba(255,255,255,.55)">Estrada dos Bandeirantes, 7533 · Barra Olímpica</span></div></div>
+        <div class="ft-ci"><span class="ft-ci-icon"><span class="material-icons" aria-hidden="true">chat</span></span><div class="ft-ci-text"><a href="https://wa.me/552124344001?text=Ol%C3%A1!%20Vim%20pelo%20Google%20e%20gostaria%20de%20um%20or%C3%A7amento%20de%20energia%20solar." target="_blank" rel="noopener">Fale no WhatsApp</a></div></div>
         <div class="ft-ci"><span class="ft-ci-icon"><span class="material-icons" aria-hidden="true">schedule</span></span><div class="ft-ci-text" style="font-size:13px;color:rgba(255,255,255,.4)">Seg–Sex 8h–18h · Sáb 8h–12h</div></div>
       </div>
     </div>
@@ -813,7 +811,7 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
         <input type="text" id="m-nome" placeholder="Seu nome" required autocomplete="name">
       </div>
       <div class="fg">
-        <label for="m-tel">WhatsApp / Telefone *</label>
+        <label for="m-tel">WhatsApp *</label>
         <input type="tel" id="m-tel" placeholder="(21) 9 0000-0000" required inputmode="tel" autocomplete="tel">
         <div class="modal-err" id="m-tel-err">Informe um telefone válido com DDD.</div>
       </div>
@@ -826,32 +824,11 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
   </div>
 </div>
 
-<!-- WHATSAPP PANEL -->
-<div class="wpp-panel" id="wppPanel">
-  <div class="wpp-panel-head">
-    <span><span class="material-icons" aria-hidden="true">chat</span> Brayner Solar</span>
-    <button class="wpp-panel-close" onclick="toggleWpp()" aria-label="Fechar">✕</button>
-  </div>
-  <div class="wpp-panel-body">
-    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px;font-weight:500">Olá! Como podemos ajudar você? Preencha abaixo e respondemos pelo WhatsApp.</p>
-    <form id="wppForm" onsubmit="submitWpp(event)">
-      <div class="fg"><label for="w-nome">Nome *</label><input type="text" id="w-nome" placeholder="Seu nome" required></div>
-      <div class="fg"><label for="w-tel">WhatsApp *</label><input type="tel" id="w-tel" placeholder="(21) 9 0000-0000" required inputmode="tel"></div>
-      <div class="fg"><label for="w-email">E-mail *</label><input type="email" id="w-email" placeholder="seu@email.com" required></div>
-      <div class="fg"><label for="w-msg">Mensagem</label><textarea id="w-msg" placeholder="Ex: Quero um orçamento de energia solar residencial em Rio de Janeiro..."></textarea></div>
-      <button type="submit" class="btn-wpp-submit" id="btn-wpp">
-        <span id="btn-wpp-text">Enviar pelo WhatsApp</span>
-        <span class="spinner" id="spin-wpp" style="border-color:rgba(255,255,255,.4);border-top-color:#fff"></span>
-      </button>
-    </form>
-  </div>
-</div>
-
-<!-- WHATSAPP TRIGGER -->
+<!-- WHATSAPP TRIGGER (direto, com mensagem identificando origem Google) -->
 <div class="wpp-float">
-  <button class="wpp-btn-trigger" onclick="toggleWpp()" aria-label="Falar no WhatsApp">
+  <a class="wpp-btn-trigger" href="https://wa.me/552124344001?text=Ol%C3%A1!%20Vim%20pelo%20Google%20e%20gostaria%20de%20um%20or%C3%A7amento%20de%20energia%20solar." target="_blank" rel="noopener" aria-label="Falar no WhatsApp" onclick="trackWppClick()">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </button>
+  </a>
 </div>
 
 <!-- ===================== JAVASCRIPT ===================== -->
@@ -1052,47 +1029,10 @@ async function submitLeadForm(e){
   else{window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${wppMsg}`,'_blank');btn.classList.remove('loading');document.getElementById('btn-main-text').style.display='';document.getElementById('spin-main').style.display='none';document.getElementById('leadFormMain').reset();}
 }
 
-// ---- WHATSAPP PANEL ----
-function toggleWpp(){
-  const panel=document.getElementById('wppPanel');
-  panel.classList.toggle('open');
-}
-
-async function submitWpp(e){
-  e.preventDefault();
-  const nome=document.getElementById('w-nome').value;
-  const tel=document.getElementById('w-tel').value;
-  const email=document.getElementById('w-email').value;
-  const msg=document.getElementById('w-msg').value;
-  if(!validPhone(tel)){alert('Informe um telefone válido com DDD.');return;}
-  if(!validEmail(email)){alert('Informe um e-mail válido.');return;}
-  const btn=document.getElementById('btn-wpp');
-  btn.classList.add('loading');
-  document.getElementById('btn-wpp-text').style.display='none';
-  document.getElementById('spin-wpp').style.display='inline-block';
-  const ip=await getIP();
+// ---- WHATSAPP CLICK TRACKING ----
+function trackWppClick(){
   const utms=mergeUTMs();
-  const payload={
-    form_type:'whatsapp_panel',pagina:'lp-brayner',
-    nome,telefone:tel,email,mensagem:msg,ip,
-    ...utms,timestamp:new Date().toISOString()
-  };
-  saveLeadCookie(payload);
-  await sendWebhook(payload);
-  dataLayer.push({event:'lead_gerado',form_type:'whatsapp',email,telefone:tel,...utms});
-  const wppMsg=encodeURIComponent(
-    `Olá Brayner Solar!\n\n`+
-    `*Nome:* ${nome}\n`+
-    `*Telefone:* ${tel}\n`+
-    `*E-mail:* ${email}\n`+
-    (msg?`*Mensagem:* ${msg}`:`Vim pelo site e gostaria de um orçamento de energia solar.`)
-  );
-  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${wppMsg}`,'_blank');
-  document.getElementById('wppPanel').classList.remove('open');
-  document.getElementById('wppForm').reset();
-  btn.classList.remove('loading');
-  document.getElementById('btn-wpp-text').style.display='';
-  document.getElementById('spin-wpp').style.display='none';
+  dataLayer.push({event:'click_whatsapp',source:'botao_flutuante',origem:'google',...utms});
 }
 
 // ---- FAQ ----
@@ -1108,24 +1048,6 @@ window.addEventListener('scroll',()=>{
   document.querySelector('.header').style.boxShadow=window.scrollY>50?'0 4px 24px rgba(7,43,105,.13)':'0 1px 4px rgba(0,0,0,.08)';
 });
 
-// ---- PROJECTS CAROUSEL ----
-const PROJECTS=['img/1.png','img/2.png','img/3.png','img/4.png'];
-let projIdx=0;
-function shiftProjects(dir){
-  projIdx=(projIdx+dir+PROJECTS.length)%PROJECTS.length;
-  for(let i=0;i<3;i++){
-    const card=document.getElementById('proj-card-'+i);
-    const img=document.getElementById('proj-img-'+i);
-    if(!card||!img)continue;
-    card.classList.add('fading');
-    setTimeout(()=>{
-      img.src=PROJECTS[(projIdx+i)%PROJECTS.length];
-      card.classList.remove('fading');
-    },180);
-  }
-}
-function nextProjects(){shiftProjects(1);}
-function prevProjects(){shiftProjects(-1);}
 </script>
 </body>
 </html>
